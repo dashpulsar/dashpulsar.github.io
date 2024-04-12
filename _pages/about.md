@@ -14,6 +14,7 @@ I am currently searching for appropriate PhD programs worldwide, aiming to fulfi
 
 What I have Learnt:
 ------
+
 | Artificial Intelligence | Data Science and Algorithms       | Engineering               |
 | --------                | --------                          | --------                  |
 | Neural Networks         | Multi Adaptive Regression Splines | Autonomous Vehicles       |
@@ -29,8 +30,9 @@ What I have Learnt:
 
 MISCELLANEOUS
 ------
+
 | Programming Languages  | Hobbies          | Where I usually respawn     |
-| --------               | :-------:        | :-------:                   |
+| --------               | --------         | --------                    |
 | Python/Torch/Tensorflow| Baking           | Labs                        |
 | Matlab/Simulink        | Cocktail Making  | Bars                        |
 | Html/Css/Javascript    | Tennis           | Gardens                     |
