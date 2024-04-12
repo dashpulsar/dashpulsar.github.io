@@ -1,14 +1,19 @@
 ---
-title: "Teaching experience 1"
+title: "Contact Me"
 collection: teaching
-type: "Undergraduate course"
+type: ""
 permalink: /teaching/2014-spring-teaching-1
-venue: "University 1, Department"
+venue: ""
 date: 2014-01-01
-location: "City, Country"
+location: ""
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+* My Website: [dashpulsar.github.io/](https://dashpulsar.github.io/)
+* My Email address:
+    * [Academic](zj69@sussex.ac.uk)
+    * [Personal](Zhengyang_Jin@outlook.com)
+* My Wechat ID: DashPulsar
+* My Instagram: [neptunexdust](https://www.instagram.com/neptunexdust)
 
 Heading 1
 ======
