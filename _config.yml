@@ -24,7 +24,8 @@ author:
   avatar           : "profile.png"
   name             : "Zhengyang Jin"
   pronouns         : # example: "he/his"  
-  bio              : "AI Researcher (In progress)     BE STILL AND KNOW "
+  bio              : "AI Researcher (In progress)"
+  bio1             : "BE STILL AND KNOW "
   location         : "Singapore"
   employer         : "A*STAR I2R"
   uri              : # URL

@@ -11,10 +11,10 @@ redirect_from:
 
 Education
 ======
-* University of Sussex, 2021-2022 <br>&nbsp;&nbsp; 
-MSc in Artificial Intelligence and Adaptive Systems <br>&nbsp;&nbsp; 
+* University of Sussex, 2021-2022 <br>&nbsp; 
+MSc in Artificial Intelligence and Adaptive Systems <br>&nbsp;
 Grade: Distinction, GPA: 3.7/4.0
-* University of Sussex, 2018-2021 <br> &nbsp;&nbsp; BSc in Computer Science and Artificial Intelligence <br>&nbsp;&nbsp; Grade: Frist-class, GPA: 3.7/4.0
+* University of Sussex, 2018-2021 <br> &nbsp; BSc in Computer Science and Artificial Intelligence <br>&nbsp; Grade: First-class, GPA: 3.7/4.0
 
 Work Experience
 ======
@@ -52,7 +52,7 @@ Skills
 
 Publications
 ======
-Conference (accepted) Jin, Z. (2023) ‘A dynamic Fitting Method for Hybrid Time-Delayed and 
+**Conference** (accepted) Jin, Z. (2023) ‘A dynamic Fitting Method for Hybrid Time-Delayed and 
 Uncertain Internally-Coupled Complex Networks: From Kuramoto Model to Neural Mass Model’, 
 Complex Networks 2023.
 
