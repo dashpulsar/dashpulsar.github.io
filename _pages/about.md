@@ -15,18 +15,18 @@ I am currently searching for appropriate PhD programs worldwide, aiming to fulfi
 What I have Learnt:
 ------
 
-| Artificial Intelligence | Data Science and Algorithms       | Engineering               |
-| --------                | --------                          | --------                  |
-| Neural Networks         | Multi Adaptive Regression Splines | Autonomous Vehicles       |
-| Deep Learning           | LOESS/LOWESS                      | Adaptive Control Systems  |
-| Global Optimization     | Gradient Boosting Machines        | Image Processing          |
-| Computer Vision         | XGBoost, LightGBM, CatBoost       | Industrial Automation     |
-| Reinforcement Learning  | Bayesian Networks                 | Robotics  optimization    |
-| Language Models         | Ensemble Methods(Bagging...)      | Swarm Intelligence        |
-| Bio-inspired AI         | Variational Autoencoders          |                           |
-| Reasoning and Knowledge | Causal Impacts                    |                           |
-| Reinforcement Learning  | Graph Neural Networks             |                           |
-| Free Energy Methods     | Evolutionary Algorithms           |                           |
+| Artificial Intelligence | Data Science and Algorithms       | Engineering               | Programming Languages  |
+| --------                | --------                          | --------                  | --------               |
+| Neural Networks         | Multi Adaptive Regression Splines | Autonomous Vehicles       | Python/Torch/Tensorflow|
+| Deep Learning           | LOESS/LOWESS                      | Adaptive Control Systems  | Matlab/Simulink        |
+| Global Optimization     | Gradient Boosting Machines        | Image Processing          | Html/Css/Javascript    |
+| Computer Vision         | XGBoost, LightGBM, CatBoost       | Industrial Automation     | C/C++/C#/.Net/Unity3D  |
+| Reinforcement Learning  | Bayesian Networks                 | Robotics  optimization    | Git/Docker/Bash/Shell  |
+| Language Models         | Ensemble Methods(Bagging...)      | Swarm Intelligence        | Java/SpringBoot        |
+| Bio-inspired AI         | Variational Autoencoders          |                           |                        |
+| Reasoning and Knowledge | Causal Impacts                    |                           |                        |
+| Reinforcement Learning  | Graph Neural Networks             |                           |                        |
+| Free Energy Methods     | Evolutionary Algorithms           |                           |                        |
 
 MISCELLANEOUS
 ------
