@@ -6,11 +6,11 @@ main:
   - title: "Showcase"
     url: /portfolio/
 
-  - title: "Talks"
+  - title: "Blogs"
     url: /talks/    
 
-  - title: "contactme"
-    url: /contactme/
+  - title: "Contactme"
+    url: /teaching/
         
 #  - title: "Blog Posts"
 #    url: /year-archive/
