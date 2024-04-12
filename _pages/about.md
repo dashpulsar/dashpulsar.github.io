@@ -15,14 +15,12 @@ I am currently searching for appropriate PhD programs worldwide, aiming to fulfi
 What I have Learnt:
 | Artificial Intelligence | Data Science | Engineering |
 |:--------                |:-------:     |--------:|
-| cell1                   | cell2        | cell3   |
-| cell4                   | ce     
-| ll5                     | cell6        |
-|---------                ----------     ----------|
+| Neural Networks         | cell2        | cell3   |
+| Deep Learning           | ce           |         |
+| Global Optimization     | cell6        |         |
 | cell1                   | cell2        | cell3   |
 | cell4                   | cell5        | cell6   |
-|=========                ==========     ==========|
-| Foot1                   | Foot2        | Foot3   |
+
 
 For more info
 ------

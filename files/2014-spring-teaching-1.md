@@ -14,12 +14,3 @@ location: ""
     * [Personal](Zhengyang_Jin@outlook.com)
 * My Wechat ID: DashPulsar
 * My Instagram: [neptunexdust](https://www.instagram.com/neptunexdust)
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
