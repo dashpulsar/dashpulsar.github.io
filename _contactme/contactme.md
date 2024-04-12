@@ -8,10 +8,10 @@ redirect_from:
 ---
 
 
-* My Website: [ashpulsar.github.io/](https://dashpulsar.github.io/)
+* My Website: [dashpulsar.github.io/](https://dashpulsar.github.io/)
 * My Email address:
     * [Academic](zj69@sussex.ac.uk)
-    * [personal](Zhengyang_Jin@outlook.com)
+    * [Personal](Zhengyang_Jin@outlook.com)
 * My Wechat ID: DashPulsar
-* My Instagram: neptunexdust
+* My Instagram: [neptunexdust](https://www.instagram.com/neptunexdust)
 {% include base_path %}
