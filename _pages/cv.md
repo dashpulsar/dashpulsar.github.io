@@ -11,8 +11,10 @@ redirect_from:
 
 Education
 ======
-* MSc in Artificial Intelligence and Adaptive Systems, University of Sussex, 2021-2022
-* BSc in Computer Science and Artificial Intelligence, University of Sussex, 2018-2021
+* University of Sussex, 2021-2022 <br>&nbsp;&nbsp; 
+MSc in Artificial Intelligence and Adaptive Systems <br>&nbsp;&nbsp; 
+Grade: Distinction, GPA: 3.7/4.0
+* University of Sussex, 2018-2021 <br> &nbsp;&nbsp; BSc in Computer Science and Artificial Intelligence <br>&nbsp;&nbsp; Grade: Frist-class, GPA: 3.7/4.0
 
 Work Experience
 ======
@@ -43,13 +45,15 @@ Skills
 * Software and Data Management
   * Git, Docker, SQL, Linux
 * Machine Learning and Data Analysis
+  * Machine Learning tools: Scikit-learn, XGBoost, LightGBM
   * Deep learning frameworks: TensorFlow, PyTorch, Keras
-  * Data manipulation tools: pandas, NumPy
-  * 
-
+  * Data manipulation tools: Modin, Dask, CuPy
+  
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+Conference (accepted) Jin, Z. (2023) ‘A dynamic Fitting Method for Hybrid Time-Delayed and 
+Uncertain Internally-Coupled Complex Networks: From Kuramoto Model to Neural Mass Model’, 
+Complex Networks 2023.
+
+
