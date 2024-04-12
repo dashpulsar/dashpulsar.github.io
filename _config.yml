@@ -55,7 +55,7 @@ author:
   goodreads        : # Username
   google_plus      : # Username
   keybase          : # Username
-  nstagram        : "neptunexdust"
+  instagram        : "neptunexdust"
   lastfm           : # Username
   linkedin         : # Username
   mastodon         : # URL
@@ -72,6 +72,7 @@ author:
   xing             : # Username
   youtube          : # Username
   zhihu            : # URL
+  weixin           : "DashPulsar"
 
 
 # Site Settings
@@ -200,7 +201,7 @@ kramdown:
 
 # Collections
 collections:
-  teaching:
+  contactme:
     output: true
     permalink: /:collection/:path/
   publications:
@@ -234,10 +235,10 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
+  # _contactme
   - scope:
       path: ""
-      type: teaching
+      type: contactme
     values:
       layout: single
       author_profile: true

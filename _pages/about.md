@@ -13,24 +13,8 @@ I am current a research engineer at A*STAR I2R Singapore. My research interests 
 I am currently searching for appropriate PhD programs worldwide, aiming to fulfill part of my grand ambitions through them. I completed both my MSc and BSc in Artificial Intelligence at the University of Sussex, graduating with Distinction and First-class honors, respectively. Additionally, I undertook cross-disciplinary modules that provided me with unique insights into neuroscience, brain and behavior, artificial life, and autonomous vehicles, among others. These academic experiences have given me a solid foundation in AI and computational methods in computer science. I have also completed an internship at an AI startup company, hyperTunnel, which has endowed me with practical knowledge in multi-agent optimization, comprehensive analysis, solution architecture, and programming. These experiences demonstrate that I possess the academic and professional skills necessary to pursue a research position, and I look forward to fulfilling my aspiration for further academic development. Please contact me if you would like to discuss further with me anything about Artificial Intelligence, Neuroscience or robotics.
 
 
-| Entry            |
-| --------         |
-| [John Doe](#)    |
-| [Jane Doe](#)    |
-| [Doe Doe](#)     |
-&&
-| Item   |&&|                                                              |
-| ------ |&&| ------------------------------------------------------------ |
-| 2016   |&&| Description of the item in the list                          |
-| 2019   |&&| Description of the item in the list                          |
-| 2022   |&&| Description of the item in the list                          |
-
-
-
-
-
 
 For more info
 ------
-More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/). 
-The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+More info about some of my past projects or research experiences? You can find them at [Shawcase](https://dashpulsar.github.io/portfolio/). 
+Want to get in touch with me? You can find the way you want on. [Contact Me](https://dashpulsar.github.io/contactme/).
