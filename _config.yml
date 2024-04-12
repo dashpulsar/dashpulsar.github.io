@@ -201,7 +201,7 @@ kramdown:
 
 # Collections
 collections:
-  contactme:
+  teaching:
     output: true
     permalink: /:collection/:path/
   publications:
@@ -235,10 +235,10 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _contactme
+  # _teaching
   - scope:
       path: ""
-      type: contactme
+      type: teaching
     values:
       layout: single
       author_profile: true
