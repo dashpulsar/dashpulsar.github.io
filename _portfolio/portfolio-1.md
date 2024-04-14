@@ -1,6 +1,6 @@
 ---
 title: "Evolution controller for foraging behaviour"
-excerpt: "Optimize the foraging behavior of robotic controllers through reinforcement learning and evolutionary algorithms.<br/><img src='/images/P1.png'>"
+excerpt: "Optimize the foraging behavior of robotic controllers through reinforcement learning and evolutionary algorithms.<br/><img src='/images/P11.png'>"
 collection: portfolio
 ---
 
