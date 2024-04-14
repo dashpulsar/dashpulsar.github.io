@@ -11,19 +11,18 @@ redirect_from:
 
 Education
 ======
-* University of Sussex, 2021-2022 <br>&nbsp; 
+* **University of Sussex**, 2021-2022 <br>&nbsp; 
 MSc in Artificial Intelligence and Adaptive Systems <br>&nbsp;
 Grade: Distinction, GPA: 3.7/4.0
-* University of Sussex, 2018-2021 <br> &nbsp; BSc in Computer Science and Artificial Intelligence <br>&nbsp; Grade: First-class, GPA: 3.7/4.0
+* **University of Sussex**, 2018-2021 <br> &nbsp; BSc in Computer Science and Artificial Intelligence <br>&nbsp; Grade: First-class, GPA: 3.7/4.0
 
 Work Experience
 ======
-* HyperTunnel, Mar 2023 - Aug 2023, AI Engineer Intern.
+* **HyperTunnel**, Mar 2023 - Aug 2023, AI Engineer Intern.
   * Developed and optimized swarm intelligence evolutionary algorithms, enhancing the efficiency of surveying robots for underground construction. Dynamic adaptive optimization of multi-objective functions.
   * Implementation of AI-driven solutions for dynamic excavation tasks, improving geological detection and operational precision.
-  * Supervisor: Xinghui Tao
 
-* Microsoft, Oct 2021 - Jun 2022, Mentee of EMBRACE Mentoring Program
+* **Microsoft**, Oct 2021 - Jun 2022, Mentee of EMBRACE Mentoring Program
   * Applying fairness ML algorithms to improve the feedback of products or advertisements among diverse populations.
   * Explore users' preferences and habits with reinforcement learning, adjusting the product's features and interface, to achieve a better user experience.
 
@@ -40,7 +39,7 @@ Research Experience
 Skills
 ======
 * Programming Languages
-  * Proficient in Python, MATLAB, Java, and R
+  * Proficient in Python, MATLAB, PyTorch
   * Experienced with C, C++, C#, JavaScript, Unity3D
 * Software and Data Management
   * Git, Docker, SQL, Linux
