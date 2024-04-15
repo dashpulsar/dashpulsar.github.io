@@ -1,6 +1,6 @@
 ---
 title: "Hybrid Time-Delayed and Uncertain Internally-Coupled Complex Networks"
-excerpt: "The study integrates the Neural Mass Model (specifically the Jansen-Rit Model) with the Kuramoto model using real human brain data from various imaging techniques to create a comprehensive model that simulates brain dynamics. This advanced model allows for the observation of frequency variations, synchronization states, and electrophysiological activities, potentially improving the simulation and understanding of neurological conditions and cognitive states.<br/><img src='/images/P21.png'>"
+excerpt: "The study integrates the Neural Mass Model (specifically the Jansen-Rit Model) with the Kuramoto model using real human brain data from various imaging techniques to create a comprehensive model that simulates brain dynamics. This advanced model allows for the observation of frequency variations, synchronization states, and electrophysiological activities, potentially improving the simulation and understanding of neurological conditions and cognitive states.<br/><img src='/images/P31.png'>"
 collection: portfolio
 ---
 
@@ -27,30 +27,30 @@ One notable instantiation of NMMs is the Jansen-Rit Model (JRM), which has been 
 
 In the present study, we extend the foundational single JRM to a network-level system comprising multiple JRMs. Each node in this network communicates based on the AAL brain structure data described above, and a more vivid depiction can be found in Fig 1. Given that local circuits are now expanded into large-scale, brain-like network circuits, nodes need to receive signals emitted from other nodes. This inter-node communication is governed by a parameter K_ij, which reflects the connectivity across areas. Additionally, considering the influence of inter-regional distances on signal transmission, the signals between nodes are also modulated by a parameter τ_ij, which represents the unit time required for a signal to reach a designated node. As a result, we can extend the original equations to accommodate these additional factors.
 
-1. \[ \dot{y}_0^i(t) = y_3^i(t) \]
-2. \[ \dot{y}_1^i(t) = y_4^i(t) \]
-3. \[ \dot{y}_2^i(t) = y_5^i(t) \]
-4. \[ \dot{y}_3^i(t) = G_e \eta_e S[y_1^i(t) - y_2^i(t)] - 2\eta_e y_3^i(t) - \eta_e^2 y_0^i(t) \]
-5. \[ \dot{y}_4^i(t) = G_e \eta_e \left(p(t) + C_2 S[C_1 y_0^i(t)] + \sum_{j=1, j \neq i}^N K^{ij} x^j(t - \tau_D^{ij}) \right) - 2\eta_e y_4^i(t) - \eta_e^2 y_1^i(t) \]
-6. \[ \dot{y}_5^i(t) = G_i \eta_i \left(C_4 S[C_3 y_0^i(t)]\right) - 2\eta_i y_5^i(t) - \eta_i^2 y_2^i(t) \]
+1. $$\[ \dot{y}_0^i(t) = y_3^i(t) \]$$
+2. $$\[ \dot{y}_1^i(t) = y_4^i(t) \]$$
+3. $$\[ \dot{y}_2^i(t) = y_5^i(t) \]$$
+4. $$\[ \dot{y}_3^i(t) = G_e \eta_e S[y_1^i(t) - y_2^i(t)] - 2\eta_e y_3^i(t) - \eta_e^2 y_0^i(t) \]$$
+5. $$\[ \dot{y}_4^i(t) = G_e \eta_e \left(p(t) + C_2 S[C_1 y_0^i(t)] + \sum_{j=1, j \neq i}^N K^{ij} x^j(t - \tau_D^{ij}) \right) - 2\eta_e y_4^i(t) - \eta_e^2 y_1^i(t) \]$$
+6. $$\[ \dot{y}_5^i(t) = G_i \eta_i \left(C_4 S[C_3 y_0^i(t)]\right) - 2\eta_i y_5^i(t) - \eta_i^2 y_2^i(t) \]$$
 
 Extended Kuramoto Model with Coupling Strength and Time Delay
 ======
 The Kuramoto model serves as a mathematical framework for describing the collective behavior of coupled oscillators. Proposed by Yoshiki Kuramoto in 1975, the model aims to capture the spontaneous synchronization phenomena observed in groups of coupled oscillators [11]. In its basic form, the Kuramoto model describes N phase oscillators through the following set of ordinary differential equations:
 
-\[ \dot{\theta}_i = \omega_i + \frac{K}{N} \sum_{j=1}^N \sin(\theta_j - \theta_i) \]
+$$\[ \dot{\theta}_i = \omega_i + \frac{K}{N} \sum_{j=1}^N \sin(\theta_j - \theta_i) \]$$
 
 Here, \(\theta\) represents the phase of the oscillators, \(\omega_i\) denotes the natural frequency of the i^th oscillator, \(N\) is the total number of oscillators, and \(K\) signifies the coupling strength between the oscillators. When the value of \(K\) is sufficiently low, it implies that the oscillators within the subsystem are in a weakly coupled state, operating more or less independently. As \(K\) increases and reaches a critical value \(K_c\), the oscillators begin to exhibit synchronization. The coherence or order parameter of the Kuramoto model can be described using the following equation:
 
-\[ r e^{i \psi} = \left| \frac{1}{N} \sum_{j=1}^N e^{i \theta_j} \right| \]
+$$\[ r e^{i \psi} = \left| \frac{1}{N} \sum_{j=1}^N e^{i \theta_j} \right| \]$$
 
 In this equation, \(e^{i \theta_j}\) is a complex number with a modulus of 1. The value of \(r\) ranges from 0 to 1, with values closer to 1 indicating a more synchronized system. To adapt the basic Kuramoto model to the current human brain network structure, the original equations can be reformulated as follows:
 
-\[ \dot{\theta}_i = \omega_i + K_{ij} \sum_{j=1}^N C_{ij} \sin(\theta_j(t-\tau_{ij}) - \theta_i(t)) \]
+$$\[ \dot{\theta}_i = \omega_i + K_{ij} \sum_{j=1}^N C_{ij} \sin(\theta_j(t-\tau_{ij}) - \theta_i(t)) \]$$
 
 Given that the human brain network structure includes a matrix \(C_{ij}\) representing the connectivity between brain regions, the focus shifts to the influence between connectable network nodes. The global coupling parameter \(K\) is replaced by \(K_{ij}\), eliminating the need for averaging. In this context, the emphasis is on detecting the coherence between two specific oscillators \(i\) and \(j\), which can be calculated using the following equation within a time window \(T\):
 
-\[ r = \left| \frac{1}{T} \int_0^T e^{i(\theta_i(t) - \theta_j(t-\tau_{ij}))} \, dt \right| \]
+$$\[ r = \left| \frac{1}{T} \int_0^T e^{i(\theta_i(t) - \theta_j(t-\tau_{ij}))} \, dt \right| \]$$
 
 By adapting the Kuramoto model in this specialized context, the focus is shifted towards understanding the intricate relationships and synchronization phenomena between specific oscillators. This nuanced approach allows for the exploration of oscillator behavior in a more localized manner, contrasting with broader network models. It opens up avenues for investigating the subtleties of oscillator interactions, which could be particularly useful in specialized applications beyond the scope of traditional brain network models.
 
