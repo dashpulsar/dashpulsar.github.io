@@ -46,4 +46,4 @@ For more info
 ------
 
 More info about some of my past projects or research experiences? You can find them at [Shawcase](https://dashpulsar.github.io/portfolio/). 
-Want to get in touch with me? You can find the way you want at [Contact Me](https://dashpulsar.github.io/teacher/).
+Want to get in touch with me? You can find the way you want at [Contact Me](https://dashpulsar.github.io/teaching/).
