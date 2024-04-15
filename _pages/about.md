@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am current a research engineer at A*STAR I2R Singapore. My research interests focus on Neuroscience-inspired AI, Adaptive Systems, and computational Neuroscience. My long-term goal is to abstract concepts such as consciousness, memory, and learning from biological neural systems and model them into advanced artificial intelligence models for application in real life. In turn, I also aim to use latest-generation AI technologies to assist and accelerate the exploration of biological neural systems, especially the brain, to enable fundamental science to explain the mechanisms of complex behaviors and systems. 
+I am current a research engineer at A*STAR I2R Singapore. My research interests focus on Neuroscience-inspired AI, Adaptive Systems, Machine Learning and Computational Neuroscience. My long-term goal is to abstract concepts such as consciousness, memory, and learning from biological neural systems and model them into advanced artificial intelligence models for application in real life. In turn, I also aim to use latest-generation AI technologies to assist and accelerate the exploration of biological neural systems, especially the brain, to enable fundamental science to explain the mechanisms of complex behaviors and systems. 
 
 My current research focuses on the Predictive Coding Network, a promising area where AI models utilize hierarchical learning processes akin to human cognitive functions. There are many novel structures, such as Active Predictive Coding and Hybrid Predictive Coding. I am now keenly interested in exploring and expanding the application of PCN in various scenarios, aiming to achieve state-of-the-art performance through structural adjustments or the integration of new modules.
 
@@ -22,13 +22,13 @@ What I have Learned:
 | Neural Networks         | Multi Adaptive Regression Splines | Autonomous Vehicles       | 
 | Deep Learning           | LOESS/LOWESS                      | Adaptive Control Systems  | 
 | Global Optimization     | Gradient Boosting Machines        | Image Processing          | 
-| Computer Vision         | XGBoost, LightGBM, CatBoost       | Industrial Automation     | 
+| Computer Vision         | Evolutionary Algorithms           | Industrial Automation     | 
 | Reinforcement Learning  | Bayesian Networks                 | Robotics  optimization    | 
 | Language Models         | Ensemble Methods(Bagging...)      | Swarm Intelligence        | 
 | Bio-inspired AI         | Variational Autoencoders          |                           | 
 | Reasoning and Knowledge | Causal Impacts                    |                           | 
 | Reinforcement Learning  | Graph Neural Networks             |                           | 
-| Free Energy Methods     | Evolutionary Algorithms           |                           | 
+| Free Energy Principle   | XGBoost, LightGBM, CatBoost       |                           | 
 
 MISCELLANEOUS
 ------
