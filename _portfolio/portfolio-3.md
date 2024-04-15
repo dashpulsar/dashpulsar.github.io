@@ -27,12 +27,12 @@ One notable instantiation of NMMs is the Jansen-Rit Model (JRM), which has been 
 
 In the present study, we extend the foundational single JRM to a network-level system comprising multiple JRMs. Each node in this network communicates based on the AAL brain structure data described above, and a more vivid depiction can be found in Fig 1. Given that local circuits are now expanded into large-scale, brain-like network circuits, nodes need to receive signals emitted from other nodes. This inter-node communication is governed by a parameter K_ij, which reflects the connectivity across areas. Additionally, considering the influence of inter-regional distances on signal transmission, the signals between nodes are also modulated by a parameter τ_ij, which represents the unit time required for a signal to reach a designated node. As a result, we can extend the original equations to accommodate these additional factors.
 
-1. $$ \dot{y}_0^i(t) = y_3^i(t) $$
-2. $$ \dot{y}_1^i(t) = y_4^i(t) $$
-3. $$ \dot{y}_2^i(t) = y_5^i(t) $$
-4. $$ \dot{y}_3^i(t) = G_e \eta_e S[y_1^i(t) - y_2^i(t)] - 2\eta_e y_3^i(t) - \eta_e^2 y_0^i(t) $$
-5. $$ \dot{y}_4^i(t) = G_e \eta_e \left(p(t) + C_2 S[C_1 y_0^i(t)] + \sum_{j=1, j \neq i}^N K^{ij} x^j(t - \tau_D^{ij}) \right) - 2\eta_e y_4^i(t) - \eta_e^2 y_1^i(t) $$
-6. $$ \dot{y}_5^i(t) = G_i \eta_i \left(C_4 S[C_3 y_0^i(t)]\right) - 2\eta_i y_5^i(t) - \eta_i^2 y_2^i(t) $$
+$$ \dot{y}_0^i(t) = y_3^i(t) $$
+$$ \dot{y}_1^i(t) = y_4^i(t) $$
+$$ \dot{y}_2^i(t) = y_5^i(t) $$
+$$ \dot{y}_3^i(t) = G_e \eta_e S[y_1^i(t) - y_2^i(t)] - 2\eta_e y_3^i(t) - \eta_e^2 y_0^i(t) $$
+$$ \dot{y}_4^i(t) = G_e \eta_e \left(p(t) + C_2 S[C_1 y_0^i(t)] + \sum_{j=1, j \neq i}^N K^{ij} x^j(t - \tau_D^{ij}) \right) - 2\eta_e y_4^i(t) - \eta_e^2 y_1^i(t) $$
+$$ \dot{y}_5^i(t) = G_i \eta_i \left(C_4 S[C_3 y_0^i(t)]\right) - 2\eta_i y_5^i(t) - \eta_i^2 y_2^i(t) $$
 
 Extended Kuramoto Model with Coupling Strength and Time Delay
 ======
