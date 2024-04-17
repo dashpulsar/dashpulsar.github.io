@@ -11,70 +11,92 @@ collection: portfolio
 <meta charset="UTF-8">
 <title>数独游戏</title>
 <style>
-  .grid, .number-selector {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    gap: 5px;
-    width: 450px;
-    margin: 10px auto;
-  }
-  .number-selector {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  button {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    text-align: center;
-  }
-  .bold {
-    border: solid 2px black;
-  }
-  .number-selector button {
-    width: 40px;
-    height: 40px;
-    margin: 2px;
-  }
-</style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      padding-top: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 2px;
+      margin-right: 20px;
+    }
+    button {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      text-align: center;
+      background-color: #f9f9f9; /* Light gray background for empty cells */
+      border: 1px solid #ccc; /* Subtle borders for cells */
+    }
+    .active {
+      background-color: #000; /* Black background for active cell */
+      color: #fff; /* White text color for contrast */
+    }
+    .filled {
+      background-color: #0026ff; /* Gray background for filled cells */
+    }
+    .number-selector {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+    .number-selector button {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+  </style>
 </head>
 
 
 <body>
-<div class="grid">
-  <!-- 生成81个按钮 -->
-  <script>
-    for (let i = 0; i < 81; i++) {
-      const button = document.createElement('button');
-      if ([2, 5, 20, 23, 26, 29, 32, 47, 50, 53, 56, 59, 74, 77].includes(i % 9) ||
-          [18, 21, 24, 27, 30, 33, 54, 57, 60, 63, 66, 69].includes(Math.floor(i / 9))) {
-        button.className = 'bold';
-      }
-      button.onclick = function() { selectNumber(this); };
-      document.querySelector('.grid').appendChild(button);
-    }
-    
-    function selectNumber(selectedCell) {
-      
-      const existingSelector = document.querySelector('.number-selector');
-      if (existingSelector) {
-        existingSelector.parentNode.removeChild(existingSelector);
-      }
-      
-      const selector = document.createElement('div');
-      selector.className = 'number-selector';
-      for (let i = 1; i <= 9; i++) {
-        const numButton = document.createElement('button');
-        numButton.textContent = i;
-        numButton.onclick = function() { selectedCell.textContent = i; };
-        selector.appendChild(numButton);
-      }
-      const clearButton = document.createElement('button');
-      clearButton.textContent = '清除';
-      clearButton.onclick = function() { selectedCell.textContent = ''; };
-      selector.appendChild(clearButton);
-      document.body.appendChild(selector);
-    }
-  </script>
-
-</div>
+    <div class="container">
+        <div class="grid">
+            <script>
+            let activeCell = null;
+            for (let i = 0; i < 81; i++) {
+                const button = document.createElement('button');
+                button.onclick = function() {
+                if (activeCell) {
+                    activeCell.classList.remove('active'); // Remove the active class from previously active cell
+                    activeCell.classList.add('filled'); // Mark it as filled if it has a number
+                }
+                activeCell = this; // Set the new active cell
+                this.classList.add('active'); // Add the active class to the new active cell
+                this.classList.remove('filled'); // Remove filled class to show active color
+                };
+                document.querySelector('.grid').appendChild(button);
+            }
+            </script>
+        </div>
+        <div class="number-selector">
+            <script>
+            for (let i = 1; i <= 9; i++) {
+                const numButton = document.createElement('button');
+                numButton.textContent = i;
+                numButton.onclick = function() {
+                if (activeCell) {
+                    activeCell.textContent = i;
+                    activeCell.classList.remove('active');
+                    activeCell.classList.add('filled');
+                }
+                };
+                document.querySelector('.number-selector').appendChild(numButton);
+            }
+            const clearButton = document.createElement('button');
+            clearButton.textContent = '清除';
+            clearButton.onclick = function() {
+                if (activeCell) {
+                    activeCell.textContent = '';
+                    activeCell.classList.remove('filled');
+                    activeCell.classList.add('active');
+                }
+            };
+            document.querySelector('.number-selector').appendChild(clearButton);
+            </script>
+        </div>
+        </div>
 </body>
