@@ -7,13 +7,13 @@ main:
     url: /portfolio/
 
   - title: "Sudoku"
-    url: /sudoku/
+    url: "https://dashpulsar.github.io/_pages/sudoku.html"
 
   - title: "Blogs"
     url: /talks/    
 
   - title: "Contact Me"
-    url: "https://dashpulsar.github.io/_pages/sudoku.html"
+    url: /teaching/
         
 #  - title: "Blog Posts"
 #    url: /year-archive/
