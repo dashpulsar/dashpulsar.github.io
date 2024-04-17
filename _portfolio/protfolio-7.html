@@ -98,5 +98,110 @@ collection: portfolio
             document.querySelector('.number-selector').appendChild(clearButton);
             </script>
         </div>
-        </div>
+    </div>
+        
+    <script>
+        function fillBoard(board) {
+            for (let row = 0; row < 9; row++) {
+                for (let col = 0; col < 9; col++) {
+                    if (board[row][col] === 0) {
+                        const numbers = shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+                        for (let number of numbers) {
+                            if (checkValid(board, row, col, number)) {
+                                board[row][col] = number;
+                                if (fillBoard(board)) {
+                                    return true;
+                                }
+                                board[row][col] = 0;
+                            }
+                        }
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function checkValid(board, row, col, number) {
+            for (let i = 0; i < 9; i++) {
+                const m = 3 * Math.floor(row / 3) + Math.floor(i / 3);
+                const n = 3 * Math.floor(col / 3) + i % 3;
+                if (board[row][i] === number || board[i][col] === number || board[m][n] === number) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function generateSudoku(difficulty) {
+            let board = Array.from({length: 9}, () => Array(9).fill(0));
+            fillBoard(board);
+            let squaresToRemove = difficulty === 'easy' ? 30 : difficulty === 'medium' ? 40 : 50;
+            while (squaresToRemove > 0) {
+                let row = Math.floor(Math.random() * 9);
+                let col = Math.floor(Math.random() * 9);
+                if (board[row][col] !== 0) {
+                    board[row][col] = 0;
+                    squaresToRemove--;
+                }
+            }
+            return board;
+        }
+
+
+        let sudokuBoard = generateSudoku('medium');
+        console.log(sudokuBoard);
+
+        function checkSudoku() {
+        const board = [];
+        const rows = new Array(9).fill().map(() => new Set());
+        const cols = new Array(9).fill().map(() => new Set());
+        const boxes = new Array(9).fill().map(() => new Set());
+        const buttons = document.querySelectorAll('.grid button');
+        for (let i = 0; i < 81; i++) {
+            const num = buttons[i].textContent;
+            if (!num) continue;
+            const row = Math.floor(i / 9);
+            const col = i % 9;
+            const box = Math.floor(row / 3) * 3 + Math.floor(col / 3);
+            if (rows[row].has(num) || cols[col].has(num) || boxes[box].has(num)) {
+            alert("数独不合法");
+            return false;
+            }
+            rows[row].add(num);
+            cols[col].add(num);
+            boxes[box].add(num);
+        }
+        return true;
+        }
+
+        function checkBoard() {
+        if (checkSudoku()) {
+            alert("当前数独合法");
+        }
+        }
+
+        function submitBoard() {
+        const buttons = document.querySelectorAll('.grid button');
+        for (let button of buttons) {
+            if (!button.textContent) {
+            alert("请完成所有格子的填写。");
+            return;
+            }
+        }
+        if (checkSudoku()) {
+            alert("Success!");
+        } else {
+            alert("数独不合法");
+        }
+        }
+    </script>
 </body>
