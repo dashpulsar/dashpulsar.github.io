@@ -145,7 +145,7 @@
                     const row = Math.floor(index / 9);
                     const col = index % 9;
                     cell.textContent = board[row][col];
-                    let shouldRemove = Math.random() > 0.8;
+                    let shouldRemove = Math.random() > 0.45;
                     if (shouldRemove) {
                         cell.textContent = '';
                     } else {
