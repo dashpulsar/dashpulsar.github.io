@@ -95,7 +95,7 @@ collection: portfolio
             let numbers = Array.from({length: 81}, (_, index) => 1 + index % 9).sort(() => Math.random() - 0.5);
             let cells = document.querySelectorAll('.grid button');
             cells.forEach((cell, index) => {
-                let isFixed = Math.random() > 0.7;
+                let isFixed = Math.random() > 0.1;
                 if (isFixed) {
                     cell.textContent = numbers[index];
                     cell.classList.add('fixed', 'filled');
