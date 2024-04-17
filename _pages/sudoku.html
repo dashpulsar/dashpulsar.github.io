@@ -16,18 +16,29 @@
             display: grid;
             grid-template-columns: repeat(9, 50px);
             grid-template-rows: repeat(9, 50px);
-            gap: 0px;
-            border: 3px solid black;
+            gap: 0px; /* Remove gap to use borders for separation */
+            border: 3px solid black; /* Thick border around the entire grid */
         }
 
         button {
-            width: 100%;
-            height: 100%;
+            width: 100%; /* Let the button fill the cell */
+            height: 100%; /* Let the button fill the cell */
             font-size: 20px;
             text-align: center;
             background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
+            border: 1px solid #ccc; /* Standard border for each cell */
+            box-sizing: border-box; /* Include border in width/height */
+        }
+
+        /* Thick borders for right and bottom of each 3x3 block */
+        .grid button:nth-child(3n) {
+            border-right: 3px solid black; /* Thick right border for cells 3, 6, 9 etc. */
+        }
+
+        .grid button:nth-child(n+19):nth-child(-n+27),
+        .grid button:nth-child(n+46):nth-child(-n+54),
+        .grid button:nth-child(n+73):nth-child(-n+81) {
+            border-bottom: 3px solid black; /* Thick bottom border for the bottom rows of each block */
         }
 
         .active {
