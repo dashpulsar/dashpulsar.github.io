@@ -17,7 +17,10 @@ collection: portfolio
             display: grid;
             grid-template-columns: repeat(9, 50px);
             grid-template-rows: repeat(9, 50px);
-            border: 3px solid black;
+            gap: 4px; /* 设置更大的间隔作为分割线 */
+            padding: 4px; /* 给外围添加与间隔同宽的边距 */
+            background-color: black; /* 设置背景色为黑色，间隙将显示为黑线 */
+            margin: auto; /* 居中显示棋盘 */
         }
 
         button {
@@ -25,44 +28,11 @@ collection: portfolio
             height: 100%;
             font-size: 20px;
             text-align: center;
-            background-color: #f9f9f9;
-            border: none;
-            box-sizing: border-box;
+            background-color: #f9f9f9; /* 按钮背景色为浅灰色 */
+            border: none; /* 移除边框 */
+            box-sizing: border-box; /* 包含边框在内的尺寸计算方式 */
         }
 
-        .grid button {
-            border-right: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .grid button:nth-child(3n) {
-            border-right: 3px solid black;
-        }
-
-        .grid button:nth-child(n+19):nth-child(-n+27), .grid button:nth-child(n+46):nth-child(-n+54), .grid button:nth-child(n+73):nth-child(-n+81) {
-            border-bottom: 3px solid black;
-        }
-
-        .grid button:nth-child(9n) {
-            border-right: none;
-        }
-
-        .grid button:nth-last-child(-n+9) {
-            border-bottom: none;
-        }
-
-        .control-button {
-            width: 100px;
-            height: 30px;
-            font-size: 14px;
-            margin: 5px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        
 
         .active {
           background-color: #000;
