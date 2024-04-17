@@ -37,6 +37,8 @@ collection: portfolio
   }
 </style>
 </head>
+
+
 <body>
 <div class="grid">
   <!-- 生成81个按钮 -->
@@ -50,13 +52,14 @@ collection: portfolio
       button.onclick = function() { selectNumber(this); };
       document.querySelector('.grid').appendChild(button);
     }
+    
     function selectNumber(selectedCell) {
-      // 删除已存在的选择器
+      
       const existingSelector = document.querySelector('.number-selector');
       if (existingSelector) {
         existingSelector.parentNode.removeChild(existingSelector);
       }
-      // 创建数字选择器
+      
       const selector = document.createElement('div');
       selector.className = 'number-selector';
       for (let i = 1; i <= 9; i++) {
@@ -72,5 +75,6 @@ collection: portfolio
       document.body.appendChild(selector);
     }
   </script>
+
 </div>
 </body>
