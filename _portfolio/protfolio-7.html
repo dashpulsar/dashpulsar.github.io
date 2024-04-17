@@ -1,0 +1,50 @@
+---
+title: "Sudoku"
+excerpt: "<br/><img src='/images/P61.png'>"
+collection: portfolio
+---
+
+
+
+<head>
+<meta charset="UTF-8">
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 5px;
+    width: 450px;
+    margin: auto;
+  }
+  input {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .bold {
+    border: solid 2px black;
+  }
+</style>
+</head>
+
+<body>
+<div class="grid">
+  <!-- 生成81个输入框 -->
+  <script>
+    for (let i = 0; i < 81; i++) {
+      const input = document.createElement('input');
+      input.type = 'number';
+      input.max = 9;
+      input.min = 1;
+      if ([2, 5, 20, 23, 26, 29, 32, 47, 50, 53, 56, 59, 74, 77].includes(i % 9) ||
+          [18, 21, 24, 27, 30, 33, 54, 57, 60, 63, 66, 69].includes(Math.floor(i / 9))) {
+        input.className = 'bold';
+      }
+      document.querySelector('.grid').appendChild(input);
+    }
+  </script>
+</div>
+</body>
+</html>
