@@ -6,6 +6,9 @@ main:
   - title: "Showcase"
     url: /portfolio/
 
+  - title: "Sudoju"
+    url: /sudoku/
+
   - title: "Blogs"
     url: /talks/    
 
