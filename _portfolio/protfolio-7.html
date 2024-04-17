@@ -169,7 +169,7 @@ collection: portfolio
             selector.appendChild(newgame);
 
             const checkSudoku = document.createElement('button');
-            checkSudoku.textContent = "Go"
+            checkSudoku.textContent = "Go";
             checkSudoku.onclick = function(){
                 const cells = document.querySelectorAll('.grid button');
                 let isComplete = true;
@@ -230,15 +230,5 @@ collection: portfolio
             setupNumberSelector();
         });
     </script>
-    <div class="container">
-        <div class="grid" id="sudoku-grid">
-
-        </div>
-        <div class="number-selector">
-
-        </div>
-        
-    </div>
-
 </body>
 </html>
