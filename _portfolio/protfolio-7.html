@@ -43,6 +43,10 @@ collection: portfolio
   <script>
     for (let i = 0; i < 81; i++) {
       const button = document.createElement('button');
+      if ([2, 5, 20, 23, 26, 29, 32, 47, 50, 53, 56, 59, 74, 77].includes(i % 9) ||
+          [18, 21, 24, 27, 30, 33, 54, 57, 60, 63, 66, 69].includes(Math.floor(i / 9))) {
+        button.className = 'bold';
+      }
       button.onclick = function() { selectNumber(this); };
       document.querySelector('.grid').appendChild(button);
     }
