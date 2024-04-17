@@ -61,12 +61,12 @@ collection: portfolio
                 const button = document.createElement('button');
                 button.onclick = function() {
                 if (activeCell) {
-                    activeCell.classList.remove('active'); // Remove the active class from previously active cell
-                    activeCell.classList.add('filled'); // Mark it as filled if it has a number
+                    activeCell.classList.remove('active');
+                    activeCell.classList.add('filled');
                 }
-                activeCell = this; // Set the new active cell
-                this.classList.add('active'); // Add the active class to the new active cell
-                this.classList.remove('filled'); // Remove filled class to show active color
+                activeCell = this; 
+                this.classList.add('active'); 
+                this.classList.remove('filled'); 
                 };
                 document.querySelector('.grid').appendChild(button);
             }
@@ -87,7 +87,7 @@ collection: portfolio
                 document.querySelector('.number-selector').appendChild(numButton);
             }
             const clearButton = document.createElement('button');
-            clearButton.textContent = '清除';
+            clearButton.textContent = 'X';
             clearButton.onclick = function() {
                 if (activeCell) {
                     activeCell.textContent = '';
