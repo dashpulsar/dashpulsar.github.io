@@ -4,12 +4,12 @@ excerpt: "A reproduce project of GPTs (GPT-1, GPT-2, GPT-3, InstructGPT and late
 collection: portfolio
 ---
 
+![GPTtimeline](https://dashpulsar.github.io/images/GPTtimeline.png)
 
+#You may find the reproduce work [here]().
 
-</br></br></br>
 
 # 1.Introduction
-======
 
 In recent years, the field of artificial intelligence has undergone a revolution, at the heart of which are the increasingly powerful Generative Pre-trained Transformer models, known as GPT, developed by leading technology companies like Google and OpenAI. From the first GPT in 2018, to GPT-2, and then to GPT-3 in 2020, followed by InstructGPT, these models have not only pushed the boundaries of natural language processing but have also drastically changed the way we interact with machines.
 
@@ -24,26 +24,26 @@ The latest model, InstructGPT, is further optimized from GPT-3 and is specifical
 Through this blog post, we will explore in detail the developmental journey of these models and their technical details, as well as how these advancements are gradually changing the way we work and live. Starting from the original GPT, we have gone through several phases of development, each marked by technological breakthroughs and innovative ideas, ultimately shaping the intelligent conversational systems we rely on today.
 
 # 2.GPT-1
-======
+
 
 In 2018, the field of NLP was primarily in a phase where deep learning approaches were centered around word2vec and crafting custom deep models for specific tasks. Although pre-trained models like ELMo and BERT had already emerged, their impact was not yet profound. Meanwhile, the rise of deep learning technologies provided new possibilities for handling large datasets. In 2017, researchers from Google published the paper "Attention Is All You Need," introducing the transformer architecture for the first time. This new network structure, through its use of self-attention, could effectively process sequential data, particularly excelling over traditional RNNs and LSTMs in handling long-distance dependencies. Building on the transformer's foundation, and incorporating the pre-training and fine-tuning approaches used in previous models, GPT-1 was developed.[(Radford, Narasimhan, Salimans, and Sutskever, 2018)](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
 
 ## 2.1 Model Structure
-======
+
 
 During the pre-training phase, GPT selects the decoder part of the transformer as its main module. The transformer is a feature extraction model proposed by Google in 2017. GPT is constructed by stacking multiple layers of transformers to form the entire pre-training model structure.
 
 ![P01](https://dashpulsar.github.io/images/P01.png)
 
-Assuming there is a text with each word denoted as \(u_i\), GPT uses the standard language model objective function to maximize the following likelihood function:
+Assuming there is a text with each word denoted as \\(u_i\\), GPT uses the standard language model objective function to maximize the following likelihood function:
 
 $$
 L_1(U) = \sum_{i} \log P(u_i \mid u_{i-k}, \dots, u_{i-1}; \Theta)
 $$
 
-Specifically, it predicts the probability of each word \(u_i\), based on the words from \(u_{i-k}\) to \(u_{i-1}\), and the model \(\Theta\). Here, \(k\) represents the context window size; theoretically, the larger \(k\) is, the more context information the model can access, enhancing the model's capabilities.
+Specifically, it predicts the probability of each word \\(u_i\\), based on the words from \\(u_{i-k}\\) to \\(u_{i-1}\\), and the model \\(\Theta\\). Here, \\(k\\) represents the context window size; theoretically, the larger \\(k\\) is, the more context information the model can access, enhancing the model's capabilities.
 
-The model embeds input \(U\) into features to get the input \(h_0\) for the first layer of the transformer, then goes through multiple layers of transformer encoding, and uses the output of the last layer to obtain the current predicted probability distribution:
+The model embeds input \\(U\\) into features to get the input \\(h_0\\) for the first layer of the transformer, then goes through multiple layers of transformer encoding, and uses the output of the last layer to obtain the current predicted probability distribution:
 
 $$
 h_0 = UW_e + W_p \\
@@ -51,9 +51,9 @@ h_l = \text{transformer\_block}(h_{l-1}) \\
 P(u) = \text{softmax}(h_n W_e^T)
 $$
 
-where \(W_e\) is the word embedding matrix, \(W_p\) is the position embedding matrix, \(h_l\) is the output of the \(l\)-th layer of the transformer, \(h_n\) is the output of the last layer of the transformer, and \(n\) is the number of layers.
+where \\(W_e\\) is the word embedding matrix, \\(W_p\\) is the position embedding matrix, \\(h_l\\) is the output of the \\(l\\)-th layer of the transformer, \\(h_n\\) is the output of the last layer of the transformer, and \\(n\\) is the number of layers.
 
-During the fine-tuning phase, given an input sequence from \(x_1\) to \(x_m\) and a specific downstream task label, the model predicts the probability of \(y\) by inputting the sequence into the pre-trained model, obtaining features \(h_l^m\) of the last token \(x^m\) from the last transformer layer, and then passing it through a prediction layer to get the probability distribution for the corresponding label:
+During the fine-tuning phase, given an input sequence from \\(x_1\\) to \\(x_m\\) and a specific downstream task label, the model predicts the probability of \\(y\\) by inputting the sequence into the pre-trained model, obtaining features \\(h_l^m\\) of the last token \\(x^m\\) from the last transformer layer, and then passing it through a prediction layer to get the probability distribution for the corresponding label:
 
 $$
 P(y \mid x^1, \dots, x^m) = \text{softmax}(h_l^m W_y)
@@ -78,7 +78,7 @@ The GPT model employs the Transformer's decoder part, precisely because its pre-
 Although GPT may not perform as well as BERT on some tasks, its potential for effectively predicting future information may prove greater in the long run. OpenAI's persistent use of the standard language model objective for pre-training, as evidenced by the impressive results of GPT-3 and subsequent ChatGPT, has proven to be both visionary and effective.
 
 ## 2.2 Model Training
-======
+
 
 In terms of training data, the original GPT model utilized the BooksCorpus dataset, which contains about 5 GB of text with over 74 million sentences. This dataset comprises approximately 7,000 independent books spanning diverse genres. The primary advantage of selecting this dataset is that book texts often include numerous high-quality, lengthy sentences, which ensures that the model can learn long-distance dependencies.
 
@@ -92,7 +92,7 @@ Some key parameters of the model include:
 | total parameters   | 1.17B    |
 
 ## 2.3 Downstream Tasks Fine-tuning
-======
+
 
 ![P01](https://dashpulsar.github.io/images/P01.png)
 
@@ -105,7 +105,7 @@ It is evident that regardless of how the input sequences or prediction layers va
 
 
 ## 2.4 Summary
-======
+
 Here are several point of the GPT-1:
 
 Firstly, it was among the earliest works to propose the use of the pre-train + fine-tuning paradigm in NLP tasks.
@@ -122,19 +122,99 @@ To further validate the zero-shot capabilities, OpenAI launched GPT-2 one year a
 
 
 # 3. GPT-2
-======
+
+Just one year later, OpenAI published the paper on GPT-2 titled "Language Models are Unsupervised Multitask Learners."[(Radford, Wu, Child, Luan, Amodei and Sutskever, 2019)](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf). The concept of multitasking in the title differs from the conventional understanding of multitasking in supervised learning. Here, it primarily refers to the model's ability to transfer knowledge learned from large-scale data directly across multiple tasks without the need for additional task-specific data. This introduces the main premise of GPT-2: zero-shot learning.
+
+Both GPT-1 and BERT, prevalent in NLP tasks, follow the pre-train + fine-tuning approach, which still requires a certain amount of supervised data for downstream tasks and additional model components for making predictions, thus incurring significant manual intervention costs. GPT-2 aims to completely resolve this issue through zero-shot learning, eliminating the need for additional labeled data or further model training when transitioning to other tasks.
+
+In GPT-1, downstream tasks required modifications to the input sequences for different tasks, including the addition of special identifiers like start, delimiter, and end symbols. However, under the zero-shot premise, we cannot add these identifiers based on varying downstream tasks because the model will not recognize these special markers without additional fine-tuning. Therefore, under zero-shot conditions, the input sequences for different tasks should look the same as the texts seen during training, which means using natural language forms for inputs. For instance, the input sequences for the following two tasks are modified as follows:
+
+> Machine Translation Task: translate to french, { english text }, { french text }
+> Reading Comprehension Task: answer the question, { document }, { question }, { answer }
+
+The authors believe that when a model has substantial capacity and the data is sufficiently rich, it can accomplish other supervised learning tasks merely through the learning capabilities of the language model, without fine-tuning on downstream tasks. This approach can provide the model with a richer array of data and training experiences.
+
+## 3.1 Model Structure
+
+
+In terms of model structure, the overall framework of GPT-2 is the same as GPT-1, but with several adjustments. These adjustments are more considered as training tricks rather than innovations of GPT-2, specifically:
+
+1. Changed post-layer normalization (post-norm) to pre-layer normalization (pre-norm);
+
+2. An additional layer normalization is added after the last self-attention layer of the model;
+
+3. Adjusted the initialization method of parameters, scaling according to the number of residual layers, with a scaling ratio of \\(1:\sqrt[]{n}\\) ;
+
+4. Expanded the maximum length of the input sequence from 512 to 1024.
+
+The differences between post-norm and pre-norm can be referenced in "Learning Deep Transformer Models for Machine Translation."[(Wang et al., 2019)](https://arxiv.org/abs/1906.01787)。The main difference between the two is that post-norm places the layer normalization after the residual layer in each transformer block, whereas pre-norm positions the layer normalization at the entry point of each block, as illustrated in the diagram below:
+
+![P04](https://dashpulsar.github.io/images/P04.png)
+
+
+The main reason for the aforementioned adjustments in GPT-2 is that as the number of layers in the model increases, the risks of gradient vanishing and gradient exploding become more significant. These adjustments help to reduce the variance changes between layers during the pre-training process, stabilizing the gradients.
+
+Ultimately, GPT-2 offers four different scales of models: (Among them, the 117M parameter model is equivalent to the GPT-1 model, and the 345M parameter model is designed to match the contemporary BERT-large model)
+
+![P05](https://dashpulsar.github.io/images/P05.png)
+
+
+## 3.2 Training Data and Experimental Results
+
+
+In terms of training data, to ensure effective zero-shot capabilities, the dataset must be sufficiently large and broad. Therefore, GPT-2 specifically crawled a vast amount of web text data, resulting in a dataset called WebText. It selected high-quality posts from Reddit, ultimately obtaining 45 million web links and 8 million valid text documents, with a corpus size of 40 GB.
+
+Experimentally, since zero-shot learning is an unsupervised method, it is compared with other unsupervised methods. Although GPT-2 achieved certain improvements over other unsupervised algorithms in many tasks, demonstrating the capability of zero-shot learning, it still fell short of supervised fine-tuning methods in many respects. This may also be one reason why GPT-2 did not have as significant an impact at the time.
+
+![P06](https://dashpulsar.github.io/images/P06.png)
+![P07](https://dashpulsar.github.io/images/P07.png)
+
+## 3.3 Conclusion
+
+The main differences:
+
+|                        | GPT-2                               | GPT-1                             |
+| --------               | --------                            | ------                            |
+| Method                 | zero-shot                           | pre-train + fine-tuning           |
+| Training Data          | 40 GB                               | 5 GB                              |
+| Total Parameters       | 15B                                 | 1B                                |
+| Structure modification | layer Norm and initialization       | Basic                             |
+| Training Parameter     | batch_size:512 context_window: 1024 | batch_size:64 context_window: 512 |
 
 
 
 # 4. GPT-3
-======
+
+Although GPT-2's zero-shot learning was highly innovative, its mediocre performance meant that it did not have a significant impact in the industry. The OpenAI team, aiming to mimic human learning methods, where only a few examples are needed to master a task, proposed the state-of-the-art GPT-3, originally described in the paper titled "Language Models are Few-Shot Learners."[(Brown et al., 2020)](https://arxiv.org/abs/2005.14165). Here, "few-shot" does not refer to the previous approach of using a small number of samples for fine-tuning on downstream tasks, because with the scale of parameters in GPT-3, even the cost of fine-tuning is prohibitively high. 
+
+## 4.1 Model Structure
+
+In terms of model architecture, GPT-3 continues to use the GPT model structure but introduces the sparse attention module from Sparse Transformers.
+
+The difference between sparse attention and traditional self-attention (called dense attention) is as follows:
+
+- Dense attention: Attention is calculated between every pair of tokens, with a complexity of \\(O(n²)\\).
+- Sparse attention: Each token calculates attention only with a subset of other tokens, reducing the complexity to \\(O(n*logn)\\).
+
+Specifically, in sparse attention, attention is set to zero for all tokens except those within a relative distance of k and those at distances of k, 2k, 3k,... as illustrated in the diagram below:
+
+![P08](https://dashpulsar.github.io/images/P08.png)
+
+The benefits of using sparse attention primarily include the following two points:
+
+It reduces the computational complexity of the attention layer, saving on memory usage and processing time, thereby enabling the handling of longer input sequences.
+It features a pattern of "local focused attention and distant sparse attention," meaning there is more focus on closely related contexts and less on distant ones.
+For more details on sparse attention, refer to "Generating Long Sequences with Sparse Transformers."[(Child et al., 2019)](https://arxiv.org/abs/1904.10509)
+
+## 4.2 Downstream Task Evaluation
 
 
-# 5. 
+
+# 5. InstructGPT
 
 
 # 6. References
 
 [1] Radford, A., Narasimhan, K., Salimans, T. and Sutskever, I., 2018. Improving language understanding by generative pre-training.
 
-[2] 
+[2] Radford, A., Wu, J., Child, R., Luan, D., Amodei, D. and Sutskever, I., 2019. Language models are unsupervised multitask learners. OpenAI blog, 1(8), p.9.
