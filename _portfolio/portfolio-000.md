@@ -318,7 +318,7 @@ Experiments mixed pre-trained gradients into PPO gradients to fix performance re
 
 $$objective(ϕ) = \mathbb{E}_{(x,y) \sim D_{\pi^{\text{RL}}_{ϕ}}}[r_θ(x, y)] - \beta \log \left( \frac{\pi^{\text{RL}}_{ϕ}(y|x)}{\pi^{\text{SFT}}(y|x)} \right) + \gamma \mathbb{E}_{x \sim D_{\text{pretrain}}} \left[ \log(\pi^{\text{RL}}_{ϕ}(x)) \right]$$
 
-where \\( \pi^{\text{RL}}_{ϕ} \\) is the RL policy learned, \\( \pi^{\text{SFT}} \\) is the supervised training model, and \\( D_{\text{pretrain}} \\) is the pre-training distribution. The KL reward coefficient \\( \beta \\) and the pre-training loss coefficient \\( \gamma \\) respectively control the intensity of the KL penalty and the pre-trained gradients. For the “PPO” model, \\( \gamma \\) is set to 0.
+where \\( \pi^{RL}_{ϕ} \\) is the RL policy learned, \\( \pi^{\text{SFT}} \\) is the supervised training model, and \\( D_{pretrain} \\) is the pre-training distribution. The KL reward coefficient \\( \beta \\) and the pre-training loss coefficient \\( \gamma \\) respectively control the intensity of the KL penalty and the pre-trained gradients. For the “PPO” model, \\( \gamma \\) is set to 0.
 
 
 ## 5.2 Conclusion
