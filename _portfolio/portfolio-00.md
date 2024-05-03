@@ -15,7 +15,7 @@ collection: portfolio
 
 Imagine we are walking through a maze. Each small box in the diagram represents a position in the maze and contains some implicit information, such as how far you are from the exit.
 
-![P1](https://dashpulsar.github.io/images/MambaGPT/P1.png)
+![P1](https://dashpulsar.github.io/images/Mamba/P1.png)
 
 The above maze can be simplified and modeled as a 'state space representation', where each small box displays:
 
@@ -25,7 +25,7 @@ The above maze can be simplified and modeled as a 'state space representation', 
 
 The variables describing the state (in our example, the X and Y coordinates and the distance to the exit) can be represented as 'state vectors'.
 
-![P2](https://dashpulsar.github.io/images/MambaGPT/P2.png)
+![P2](https://dashpulsar.github.io/images/Mamba/P2.png)
 
 ## 1.2 What is State Spaces Models (SSM)
 
@@ -39,11 +39,11 @@ Generally, SSMs include the following components:
 
 However, it does not use discrete sequences (like moving left once), but instead takes continuous sequences as inputs to predict output sequences.
 
-![P3](https://dashpulsar.github.io/images/MambaGPT/P3.png)
+![P3](https://dashpulsar.github.io/images/Mamba/P3.png)
 
 SSMs assume that dynamic systems, such as an object moving in 3D space, can be predicted from its state at time t through two equations.
 
-![P4](https://dashpulsar.github.io/images/MambaGPT/P4.png)
+![P4](https://dashpulsar.github.io/images/Mamba/P4.png)
 
 By solving these equations, it is possible to predict the state of the system based on observed data (input sequences and previous states). Therefore, the above equations represent the core idea of the State Space Model (SSM).
 
@@ -51,50 +51,50 @@ By solving these equations, it is possible to predict the state of the system ba
 
 The state equation describes how the state changes (through matrix A) based on how the input influences the state (through matrix B).
 
-![P5](https://dashpulsar.github.io/images/MambaGPT/P5.png)
+![P5](https://dashpulsar.github.io/images/Mamba/P5.png)
 
 As we saw before, h(t) refers to our latent state representation at any given time t, and x(t) refers to some input.
 
 The output equation describes how the state is translated to the output (through matrix C) and how the input influences the output (through matrix D).
 
-![P6](https://dashpulsar.github.io/images/MambaGPT/P6.png)
+![P6](https://dashpulsar.github.io/images/Mamba/P6.png)
 
 ## 1.4 Fata Flow Detail
 
 Visualizing above two equations gives us the following architecture:
 
-![P7](https://dashpulsar.github.io/images/MambaGPT/P7.png)
+![P7](https://dashpulsar.github.io/images/Mamba/P7.png)
 
 
 Assume we have some input signal x(t), this signal first gets multiplied by matrix B which describes how the inputs influence the system.
 
-![P8](https://dashpulsar.github.io/images/MambaGPT/P8.png)
+![P8](https://dashpulsar.github.io/images/Mamba/P8.png)
 
 The updated state (akin to the hidden state of a neural network) is a latent space that contains the core “knowledge” of the environment. We multiply the state with matrix A which describes how all the internal states are connected as they represent the underlying dynamics of the system.
 
-![P9](https://dashpulsar.github.io/images/MambaGPT/P9.png)
+![P9](https://dashpulsar.github.io/images/Mamba/P9.png)
 
 Matrix A is applied before creating the state representations and is updated after the state representation has been updated.
 
 Then, we use matrix C to describe how the state can be translated to an output.
 
-![P10](https://dashpulsar.github.io/images/MambaGPT/P10.png)
+![P10](https://dashpulsar.github.io/images/Mamba/P10.png)
 
 Finally, we can make use of matrix D to provide a direct signal from the input to the output. This is also often referred to as a skip-connection.
 
-![P11](https://dashpulsar.github.io/images/MambaGPT/P11.png)
+![P11](https://dashpulsar.github.io/images/Mamba/P11.png)
 
 Since matrix D is similar to a skip-connection, the SSM is often regarded as the following without the skip-connection.
 
-![P12](https://dashpulsar.github.io/images/MambaGPT/P12.png)
+![P12](https://dashpulsar.github.io/images/Mamba/P12.png)
 
 Going back to our simplified perspective, we can now focus on matrices A, B, and C as the core of the SSM.
 
-![P13](https://dashpulsar.github.io/images/MambaGPT/P13.png)
+![P13](https://dashpulsar.github.io/images/Mamba/P13.png)
 
 We can update the original equations (and add some pretty colors) to signify the purpose of each matrix as we did before.
 
-![P14](https://dashpulsar.github.io/images/MambaGPT/P14.png)
+![P14](https://dashpulsar.github.io/images/Mamba/P14.png)
 
 Together, these two equations aim to predict the state of a system from observed data. Since the input is expected to be continuous, the main representation of the SSM is a continuous-time representation.
 
@@ -106,20 +106,20 @@ Three-step upgrade from SSM to S4: discretized SSM, cyclic/convolutional represe
 
 In addition to continuous inputs, discrete inputs (such as text sequences) are also commonly encountered. However, even when trained on discrete data, an SSM can still learn the underlying continuous information. This is because, for an SSM, a sequence is merely a sampling of a continuous signal, or in other words, the continuous signal model is a generalization of the discrete sequence model.
 
-![P15](https://dashpulsar.github.io/images/MambaGPT/P15.png)
+![P15](https://dashpulsar.github.io/images/Mamba/P15.png)
 
 
 The Zero-order hold technique can be used to discretize the model, thus handling discrete signals.
 
 1. Initially, when a discrete signal is received, its value is maintained until a new discrete signal is received. This operation results in the creation of a continuous signal that the SSM can utilize.
 
-![P16](https://dashpulsar.github.io/images/MambaGPT/P16.png)
+![P16](https://dashpulsar.github.io/images/Mamba/P16.png)
 
 2. The duration for which this value is held is represented by a new learnable parameter known as the step size (siz) — Δ, which signifies the phased hold (resolution) of the input.
 
 3. With the continuous input signal available, continuous outputs can be generated, and values are sampled based solely on the input’s time step size.
 
-![P17](https://dashpulsar.github.io/images/MambaGPT/P17.png)
+![P17](https://dashpulsar.github.io/images/Mamba/P17.png)
 
 
 These sampled values become our discrete outputs, and for matrices A and B, the zero-order hold can be applied in the following way: 
@@ -139,7 +139,7 @@ $$
 
 They collectively enable us to transition from a continuous SSM to a discretized SSM represented by the formulas. The model no longer represents a function to function \\(x(t) \rightarrow y(t)\\), but rather a sequence to sequence \\(x_k \rightarrow y_k\\):
 
-![P18](https://dashpulsar.github.io/images/MambaGPT/P18.png)
+![P18](https://dashpulsar.github.io/images/Mamba/P18.png)
 
 
 Here, matrices A and B now represent the discrete parameters of the model.
@@ -152,7 +152,7 @@ Note: During training still maintain the continuous form of matrix A, not the di
 
 The discrete SSM allows the problem to be reformulated using discrete time steps. At each time step, we compute how the current input \\(\(Bx_k\)\\) affects the previous state \\(\(Ah_{k-1}\)\\), and then calculate the predicted output \\(\(Ch_k\)\\).
 
-![P19](https://dashpulsar.github.io/images/MambaGPT/P19.png)
+![P19](https://dashpulsar.github.io/images/Mamba/P19.png)
 
 
 If we expand y2 we can get the following:
@@ -171,29 +171,29 @@ $$
 
 Another representation that we can use for SSMs is that of convolutions. Remember from classic image recognition tasks where we applied filters (kernels) to derive aggregate features:
 
-![P20](https://dashpulsar.github.io/images/MambaGPT/P20.png)
+![P20](https://dashpulsar.github.io/images/Mamba/P20.png)
 
 Since we are dealing with text and not images, we need a 1-dimensional perspective instead:
 
-![P21](https://dashpulsar.github.io/images/MambaGPT/P21.png)
+![P21](https://dashpulsar.github.io/images/Mamba/P21.png)
 
 The kernel that we use to represent this “filter” is derived from the SSM formulation:
 
-![P22](https://dashpulsar.github.io/images/MambaGPT/P22.png)
+![P22](https://dashpulsar.github.io/images/Mamba/P22.png)
 
 Let’s explore how this kernel works in practice. Like convolution, we can use our SSM kernel to go over each set of tokens and calculate the output:
 
-![P23](https://dashpulsar.github.io/images/MambaGPT/P23.png)
+![P23](https://dashpulsar.github.io/images/Mamba/P23.png)
 
 This also illustrates the effect padding might have on the output. I changed the order of padding to improve the visualization but we often apply it at the end of a sentence.
 
 In the next step, the kernel is moved once over to perform the next step in the calculation:
 
-![P24](https://dashpulsar.github.io/images/MambaGPT/P24.png)
+![P24](https://dashpulsar.github.io/images/Mamba/P24.png)
 
 In the final step, we can see the full effect of the kernel:
 
-![P25](https://dashpulsar.github.io/images/MambaGPT/P25.png)
+![P25](https://dashpulsar.github.io/images/Mamba/P25.png)
 
 A major benefit of representing the SSM as a convolution is that it can be trained in parallel like Convolutional Neural Networks (CNNs). However, due to the fixed kernel size, their inference is not as fast and unbounded as RNNs.
 
@@ -226,7 +226,7 @@ $$
 
 These three representations, continuous, recurrent, and convolutional all have different sets of advantages and disadvantages:
 
-![P26](https://dashpulsar.github.io/images/MambaGPT/P26.png)
+![P26](https://dashpulsar.github.io/images/Mamba/P26.png)
 
 One of the main benefits of representing the SSM as a convolution is that it can be trained in parallel similar to convolutional neural networks (CNNs). However, due to the fixed size of the kernel, their inference is not as fast as that of RNNs.
 
@@ -237,7 +237,7 @@ Interestingly, we can now use a recurrent SSM for efficient inference and a conv
 
 With these representations, we can use a clever trick: choose the representation based on the task. During training, we use the convolutional representation that can be parallelized, and during inference, we use the efficient recurrent representation:
 
-![P27](https://dashpulsar.github.io/images/MambaGPT/P27.png)
+![P27](https://dashpulsar.github.io/images/Mamba/P27.png)
 
 This model is called the Linear State Space Layer (LSSL).
 
@@ -252,27 +252,27 @@ Before we explore how Mamba addresses this issue, let's discuss the final piece 
 Matrix A can be considered one of the most crucial aspects of the SSM formula. As we have seen in the recurrent representation, it captures information about previous states to construct new states.
  \\(h_k = \overline{A} h_{k-1} + \overline{B} x_k\\), and when k = 5, then \\(h_5 = \overline{A} h_{4} + \overline{B} x_5\\).
 
-![P28](https://dashpulsar.github.io/images/MambaGPT/P28.png)
+![P28](https://dashpulsar.github.io/images/Mamba/P28.png)
 
 In essence, matrix A produces the hidden state:
 
-![P29](https://dashpulsar.github.io/images/MambaGPT/P29.png)
+![P29](https://dashpulsar.github.io/images/Mamba/P29.png)
 
 
 Since matrix A only remembers the previous few tokens and captures the differences between every token seen so far, especially in the context of the recurrent representation, as it only looks back at previous states. Therefore, we need a way to create matrix A that can retain a longer memory, namely High-order Polynomial Projection Operators (HiPPO).
 
 HiPPO attempts to compress all the input signals seen so far into a vector of coefficients.
 
-![P30](https://dashpulsar.github.io/images/MambaGPT/P30.png)
+![P30](https://dashpulsar.github.io/images/Mamba/P30.png)
 
 
 It uses matrix A to construct a state representation that captures recent tokens well and attenuates older tokens, producing an optimal solution for state matrix A through function approximation. The formula can be represented as follows:
 
-![P31](https://dashpulsar.github.io/images/MambaGPT/P31.png)
+![P31](https://dashpulsar.github.io/images/Mamba/P31.png)
 
 As following table:
 
-![P32](https://dashpulsar.github.io/images/MambaGPT/P32.png)
+![P32](https://dashpulsar.github.io/images/Mamba/P32.png)
 
 Building matrix A using HiPPO was shown to be much better than initializing it as a random matrix. As a result, it more accurately reconstructs newer signals (recent tokens) compared to older signals (initial tokens).
 
@@ -291,7 +291,7 @@ It consists of three parts:
 
 3. Discretization for creating recurrent and convolution representations
 
-![P33](https://dashpulsar.github.io/images/MambaGPT/P33.png)
+![P33](https://dashpulsar.github.io/images/Mamba/P33.png)
 
 This class of SSMs has several benefits depending on the representation you choose (recurrent vs. convolution). It can also handle long sequences of text and store memory efficiently by building upon the HiPPO matrix.
 
