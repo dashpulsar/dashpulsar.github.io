@@ -289,13 +289,182 @@ It consists of three parts:
 This class of SSMs has several benefits depending on the representation you choose (recurrent vs. convolution). It can also handle long sequences of text and store memory efficiently by building upon the HiPPO matrix.
 
 
-## 2.6 How S4 works
+# 3 Mamba - A Selective SSM
 
-### 2.6.1 Mapping Input to State, Optimize long sequence processing
+We finally have covered all the fundamentals necessary to understand what makes Mamba special. State Space Models can be used to model textual sequences but still have a set of disadvantages we want to prevent.
 
-Sequence data is generally discrete, such as text, images, and DNA. However, there are many continuous types of data in real life, such as audio and video. A significant characteristic of audio and video signals is their extremely long context windows.
+In this section, we will go through Mamba’s two main contributions:
 
-Transformers often fail on long contexts, and attention mechanisms are not particularly adept at tasks with such extensive context lengths. This has led to various improvements to the attention mechanism, such as flash attention, etc. Even so, they typically handle contexts up to about 32K in length, and are powerless when faced with sequence lengths of 1 million. S4, on the other hand, excels at these types of tasks.
+A selective scan algorithm, which allows the model to filter (ir)relevant information
+
+A hardware-aware algorithm that allows for efficient storage of (intermediate) results through parallel scan, kernel fusion, and recomputation.
+
+Together they create the selective SSM or S6 models which can be used, like self-attention, to create Mamba blocks.
+
+Before exploring the two main contributions, let’s first explore why they are necessary.
 
 
+## 3.1 What Problem does it attempt to Solve?a
 
+State Space Models, and even the S4 (Structured State Space Model), perform poorly on certain tasks that are vital in language modeling and generation, namely the ability to focus on or ignore particular inputs.
+
+We can illustrate this with two synthetic tasks, namely selective copying and induction heads.
+
+In the selective copying task, the goal of the SSM is to copy parts of the input and output them in order:
+
+![P34](https://dashpulsar.github.io/images/Mamba/P34.png)
+
+However, a (recurrent/convolutional) SSM performs poorly in this task since it is Linear Time Invariant. As we saw before, the matrices A, B, and C are the same for every token the SSM generates.
+
+As a result, an SSM cannot perform content-aware reasoning since it treats each token equally as a result of the fixed A, B, and C matrices. This is a problem as we want the SSM to reason about the input (prompt).
+
+The second task an SSM performs poorly on is induction heads where the goal is to reproduce patterns found in the input:
+
+![P35](https://dashpulsar.github.io/images/Mamba/P35.png)
+
+In the above example, we are essentially performing one-shot prompting where we attempt to “teach” the model to provide an “A:” response after every “Q:”. However, since SSMs are time-invariant it cannot select which previous tokens to recall from its history.
+
+Let’s illustrate this by focusing on matrix B. Regardless of what the input x is, matrix B remains exactly the same and is therefore independent of x:
+
+![P36](https://dashpulsar.github.io/images/Mamba/P36.png)
+
+Likewise, A and C also remain fixed regardless of the input. This demonstrates the static nature of the SSMs we have seen thus far.
+
+![P37](https://dashpulsar.github.io/images/Mamba/P37.png)
+
+In comparison, these tasks are relatively easy for Transformers since they dynamically change their attention based on the input sequence. They can selectively “look” or “attend” at different parts of the sequence.
+
+The poor performance of SSMs on these tasks illustrates the underlying problem with time-invariant SSMs, the static nature of matrices A, B, and C results in problems with content-awareness.
+
+## 3.2 Selectively Retain Information
+
+The recurrent representation of an SSM creates a small state that is quite efficient as it compresses the entire history. However, compared to a Transformer model which does no compression of the history (through the attention matrix), it is much less powerful.
+
+Mamba aims to have the best of both worlds. A small state that is as powerful as the state of a Transformer:
+
+![P38](https://dashpulsar.github.io/images/Mamba/P38.png)
+
+As teased above, it does so by compressing data selectively into the state. When you have an input sentence, there is often information, like stop words, that does not have much meaning.
+
+To selectively compress information, we need the parameters to be dependent on the input. To do so, let’s first explore the dimensions of the input and output in an SSM during training:
+
+![P39](https://dashpulsar.github.io/images/Mamba/P39.png)
+
+In a Structured State Space Model (S4), the matrices A, B, and C are independent of the input since their dimensions N and D are static and do not change.
+
+![P40](https://dashpulsar.github.io/images/Mamba/P40.png)
+
+Instead, Mamba makes matrices B and C, and even the step size ∆, dependent on the input by incorporating the sequence length and batch size of the input:
+
+![P41](https://dashpulsar.github.io/images/Mamba/P41.png)
+
+This means that for every input token, we now have different B and C matrices which solves the problem with content-awareness!
+
+Matrix A remains the same since we want the state itself to remain static but the way it is influenced (through B and C) to be dynamic.
+
+Together, they selectively choose what to keep in the hidden state and what to ignore since they are now dependent on the input.
+
+A smaller step size ∆ results in ignoring specific words and instead using the previous context more whilst a larger step size ∆ focuses on the input words more than the context:
+
+![P42](https://dashpulsar.github.io/images/Mamba/P42.png)
+
+## 3.3 The Scan Operation
+
+Since these matrices are now dynamic, they cannot be calculated using the convolution representation since it assumes a fixed kernel. We can only use the recurrent representation and lose the parallelization the convolution provides.
+
+To enable parallelization, let’s explore how we compute the output with recurrency:
+
+![P43](https://dashpulsar.github.io/images/Mamba/P43.png)
+
+Each state is the sum of the previous state (multiplied by A) plus the current input (multiplied by B). This is called a scan operation and can easily be calculated with a for loop.
+
+Parallelization, in contrast, seems impossible since each state can only be calculated if we have the previous state. Mamba, however, makes this possible through the parallel scan algorithm.
+
+It assumes the order in which we do operations does not matter through the associate property. As a result, we can calculate the sequences in parts and iteratively combine them:
+
+![P44](https://dashpulsar.github.io/images/Mamba/P44.png)
+
+Together, dynamic matrices B and C, and the parallel scan algorithm create the selective scan algorithm to represent the dynamic and fast nature of using the recurrent representation.
+
+## 3.4 Hardware-aware Algorithm
+
+A disadvantage of recent GPUs is their limited transfer (IO) speed between their small but highly efficient SRAM and their large but slightly less efficient DRAM. Frequently copying information between SRAM and DRAM becomes a bottleneck.
+
+![P45](https://dashpulsar.github.io/images/Mamba/P45.png)
+
+Mamba, like Flash Attention, attempts to limit the number of times we need to go from DRAM to SRAM and vice versa. It does so through kernel fusion which allows the model to prevent writing intermediate results and continuously performing computations until it is done.
+
+![P46](https://dashpulsar.github.io/images/Mamba/P46.png)
+
+We can view the specific instances of DRAM and SRAM allocation by visualizing Mamba’s base architecture:
+
+![P47](https://dashpulsar.github.io/images/Mamba/P47.png)
+
+Here, the following are fused into one kernel:
+
+1. Discretization step with step size ∆
+
+2. Selective scan algorithm
+
+3. Multiplication with C
+
+The last piece of the hardware-aware algorithm is recomputation.
+
+The intermediate states are not saved but are necessary for the backward pass to compute the gradients. Instead, the authors recompute those intermediate states during the backward pass.
+
+Although this might seem inefficient, it is much less costly than reading all those intermediate states from the relatively slow DRAM.
+
+We have now covered all components of its architecture which is depicted using the following image from its article:
+
+![P48](https://dashpulsar.github.io/images/Mamba/P48.png)
+
+This architecture is often referred to as a selective SSM or S6 model since it is essentially an S4 model computed with the selective scan algorithm.
+
+## 3.5 The Mamba Block
+
+The selective SSM that we have explored thus far can be implemented as a block, the same way we can represent self-attention in a decoder block.
+
+![P49](https://dashpulsar.github.io/images/Mamba/P49.png)
+
+Like the decoder, we can stack multiple Mamba blocks and use their output as the input for the next Mamba block:
+
+![P50](https://dashpulsar.github.io/images/Mamba/P50.png)
+
+It starts with a linear projection to expand upon the input embeddings. Then, a convolution before the Selective SSM is applied to prevent independent token calculations.
+
+The Selective SSM has the following properties:
+
+Recurrent SSM created through discretization
+
+HiPPO initialization on matrix A to capture long-range dependencies
+
+Selective scan algorithm to selectively compress information
+
+Hardware-aware algorithm to speed up computation
+
+We can expand on this architecture a bit more when looking at the code implementation and explore how an end-to-end example would look like:
+
+![P51](https://dashpulsar.github.io/images/Mamba/P51.png)
+
+
+# References and Resources:
+
+A JAX implementation and guide through the S4 model: [The Annotated S4](https://srush.github.io/annotated-s4/)
+
+[This video](https://www.youtube.com/watch?v=ouF-H35atOY) introducing Mamba by building it up through foundational papers.
+
+ Blog posts about the S4 models ([blog1](https://hazyresearch.stanford.edu/blog/2022-01-14-s4-1), [blog2](https://hazyresearch.stanford.edu/blog/2022-01-14-s4-2), [blog3](https://hazyresearch.stanford.edu/blog/2022-01-14-s4-3))
+
+
+[This blog](https://jameschen.io/jekyll/update/2024/02/12/mamba.html) post is a great next step to dive into more technical details about Mamba but still from an amazingly intuitive perspective.
+
+
+Gu, Albert, and Tri Dao. "Mamba: Linear-time sequence modeling with selective state spaces." arXiv preprint arXiv:2312.00752 (2023).
+
+Gu, Albert, et al. "Combining recurrent, convolutional, and continuous-time models with linear state space layers." Advances in neural information processing systems 34 (2021): 572-585.
+
+Gu, Albert, et al. "Hippo: Recurrent memory with optimal polynomial projections." Advances in neural information processing systems 33 (2020): 1474-1487.
+
+Voelker, Aaron, Ivana Kajić, and Chris Eliasmith. "Legendre memory units: Continuous-time representation in recurrent neural networks." Advances in neural information processing systems 32 (2019).
+
+Gu, Albert, Karan Goel, and Christopher Ré. "Efficiently modeling long sequences with structured state spaces." arXiv preprint arXiv:2111.00396 (2021).

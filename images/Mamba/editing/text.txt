@@ -1,0 +1,30 @@
+## 2.6 How S4 works
+
+
+
+Sequence data is generally discrete, such as text, images, and DNA. However, there are many continuous types of data in real life, such as audio and video. A significant characteristic of audio and video signals is their extremely long context windows.
+
+Transformers often fail on long contexts, and attention mechanisms are not particularly adept at tasks with such extensive context lengths. This has led to various improvements to the attention mechanism, such as flash attention, etc. Even so, they typically handle contexts up to about 32K in length, and are powerless when faced with sequence lengths of 1 million. S4, on the other hand, excels at these types of tasks.
+
+![P34](https://dashpulsar.github.io/images/Mamba/P34.png)
+
+### 2.6.1 Definition and derivation of HiPPO: state compresses the history of input
+Improving the limited memory capacity of the hidden state in RNNs, where the fixed size of the hidden state struggles to accommodate the continuous influx of information as the sequence length increases, is a critical challenge. To address this, we can redefine a good memory for the hidden state.
+
+Assuming at time t0 we observe the prior portion of the original input signal u(t):
+
+One strategy is to compress this segment of the original input within a memory budget to learn features. A straightforward approach would be to use a polynomial to approximate this segment of the input.
+
+As we receive more signals, we aim to keep compressing the entire signal within this memory budget. Naturally, you would need to update the coefficients of your polynomial. Importantly, these coefficients do not need to change because of the input initially; they can even be initialized at any time. Then, as the need arises for more accurate predictions and better compression of historical data, these coefficients are adjusted during the training process to better fit the observed data, as illustrated at the bottom of the diagram.
+
+This method allows for a more dynamic and efficient use of the memory budget by continuously refining the polynomial's coefficients in response to new information, thus enhancing the memory capabilities of the RNN's hidden state.
+
+![P35](https://dashpulsar.github.io/images/Mamba/P35.png)
+
+From the above, two issues arise: 1.How can we find these optimal approximations? 2.How can we quickly update the parameters of the polynomial? To address these two issues, we need a measure to define the quality of an approximation. For example, the Error Distance Measure (EDM) can be used.
+
+![P36](https://dashpulsar.github.io/images/Mamba/P36.png)
+
+Combining two signals and two matrices results in HiPPO.
+
+![P37](https://dashpulsar.github.io/images/Mamba/P37.png)
