@@ -319,11 +319,9 @@ The SFT model was fine-tuned using PPO. The environment was a bandit setting tha
 
 Experiments mixed pre-trained gradients into PPO gradients to fix performance regressions on public NLP datasets. These models are referred to as “PPO-ptx.” During RL training, the following combined objective function was maximized:
 
-$$objective(ϕ) = \mathbb{E}_{(x,y) \sim D_{\pi^{\text{RL}}_{ϕ}}}[r_θ(x, y)] - \beta \log \left( \frac{\pi^{\text{RL}}_{ϕ}(y|x)}{\pi^{\text{SFT}}(y|x)} \right) + \gamma \mathbb{E}_{x \sim D_{\text{pretrain}}} \left[ \log(\pi^{\text{RL}}_{ϕ}(x)) \right] 
-$$
+$$objective(ϕ) = \mathbb{E}_{(x,y) \sim D_{\pi^{\text{RL}}_{ϕ}}}[r_θ(x, y)] - \beta \log \left( \frac{\pi^{\text{RL}}_{ϕ}(y|x)}{\pi^{\text{SFT}}(y|x)} \right) + \gamma \mathbb{E}_{x \sim D_{\text{pretrain}}} \left[ \log(\pi^{\text{RL}}_{ϕ}(x)) \right] $$
 
-where \\(\pi^{RL}_{\phi}\\) 
-is the RL policy learned, \\( (\pi)^{\text{SFT}} \\) is the supervised training model, and \\( D_{pretrain} \\) is the pre-training distribution. The KL reward coefficient \\( \beta \\) and the pre-training loss coefficient \\( \gamma \\) respectively control the intensity of the KL penalty and the pre-trained gradients. For the “PPO” model, \\( \gamma \\) is set to 0.
+where \\(\pi^{\text{RL}}_{\phi}\\) is the RL policy learned, \\( (\pi)^{\text{SFT}} \\) is the supervised training model, and \\( D_{\text{pretrain}} \\) is the pre-training distribution. The KL reward coefficient \\( \beta \\) and the pre-training loss coefficient \\( \gamma \\) respectively control the intensity of the KL penalty and the pre-trained gradients. For the “PPO” model, \\( \gamma \\) is set to 0.
 
 
 
