@@ -126,15 +126,11 @@ These sampled values become our discrete outputs, and for matrices A and B, the 
 
 Discretized matrix A
 
-$$
-\(\bar{A} = \exp(\Delta A)\)
-$$
+$$ \bar{A} = \exp(\Delta A) $$
 
 Discretized matrix B
 
-$$
-\(\bar{B} = (\Delta A)^{-1} (\exp(\Delta A) - I) \cdot \Delta B\)
-$$
+$$ \bar{B} = (\Delta A)^{-1} (\exp(\Delta A) - I) \cdot \Delta B $$
 
 
 They collectively enable us to transition from a continuous SSM to a discretized SSM represented by the formulas. The model no longer represents a function to function \\(x(t) \rightarrow y(t)\\), but rather a sequence to sequence \\(x_k \rightarrow y_k\\):
@@ -157,14 +153,13 @@ The discrete SSM allows the problem to be reformulated using discrete time steps
 
 If we expand y2 we can get the following:
 
-$$
-y_2 = Ch_2
-    = C(Ah_1 + Bx_2)
-    = C(A(Ah_0 + Bx_1) + Bx_2)
-    = C(A(A \cdot Bx_0 + Bx_1) + Bx_2)
-    = C(A \cdot A \cdot Bx_0 + A \cdot Bx_1 + Bx_2)
-    = C \cdot A^2 \cdot Bx_0 + C \cdot A \cdot B \cdot x_1 + C \cdot Bx_2
-$$
+$$y_2 = Ch_2$$
+$$= C(Ah_1 + Bx_2)$$
+$$= C(A(Ah_0 + Bx_1) + Bx_2)$$
+$$= C(A(A \cdot Bx_0 + Bx_1) + Bx_2)$$
+$$= C(A \cdot A \cdot Bx_0 + A \cdot Bx_1 + Bx_2)$$
+$$= C \cdot A^2 \cdot Bx_0 + C \cdot A \cdot B \cdot x_1 + C \cdot Bx_2$$
+
 
 
 ## 2.3 The Convolution Representation
@@ -213,13 +208,11 @@ $$
 
 Since the three discrete parameters A, B, and C are constants, we can pre-compute the left-hand side vector and save it as a convolution kernel. This provides us with a straightforward method to compute \\(y\\) at very high speeds using convolution, as shown in the following two equations:
 
-$$
+$$K = (CB \quad CAB \quad \dots \quad CA^kB)$$
 
-\[K = (CB \quad CAB \quad \dots \quad CA^kB)\]
+$$y = K \ast x$$
 
-\[y = K \ast x\]
 
-$$
 
 
 ## 2.4 Continuous, Recurrent, and Convolutional Representations
