@@ -129,7 +129,8 @@ Both GPT-1 and BERT, prevalent in NLP tasks, follow the pre-train + fine-tuning 
 
 In GPT-1, downstream tasks required modifications to the input sequences for different tasks, including the addition of special identifiers like start, delimiter, and end symbols. However, under the zero-shot premise, we cannot add these identifiers based on varying downstream tasks because the model will not recognize these special markers without additional fine-tuning. Therefore, under zero-shot conditions, the input sequences for different tasks should look the same as the texts seen during training, which means using natural language forms for inputs. For instance, the input sequences for the following two tasks are modified as follows:
 
-> Machine Translation Task: translate to french, { english text }, { french text } </br>
+> Machine Translation Task: translate to french, { english text }, { french text }
+
 > Reading Comprehension Task: answer the question, { document }, { question }, { answer }
 
 The authors believe that when a model has substantial capacity and the data is sufficiently rich, it can accomplish other supervised learning tasks merely through the learning capabilities of the language model, without fine-tuning on downstream tasks. This approach can provide the model with a richer array of data and training experiences.
@@ -210,9 +211,11 @@ For more details on sparse attention, refer to "Generating Long Sequences with S
 
 GPT-3 combines features from versions 1 and 2 in its evaluation and prediction for downstream tasks, offering three distinct approaches:
 
-> Zero-shot: Uses only the natural language description of the current task, with no gradient updates;</br>
-> One-shot: Uses the natural language description of the current task along with a single simple input-output example, with no gradient updates;</br>
-> Few-shot: Uses the natural language description of the current task along with a few simple input-output examples, with no gradient updates.</br>
+> Zero-shot: Uses only the natural language description of the current task, with no gradient updates;
+
+> One-shot: Uses the natural language description of the current task along with a single simple input-output example, with no gradient updates;
+
+> Few-shot: Uses the natural language description of the current task along with a few simple input-output examples, with no gradient updates.
 
 The few-shot approach is also known as in-context learning. Although it, like fine-tuning, requires some supervised labeled data, the differences between them are:
 
@@ -316,9 +319,13 @@ The SFT model was fine-tuned using PPO. The environment was a bandit setting tha
 
 Experiments mixed pre-trained gradients into PPO gradients to fix performance regressions on public NLP datasets. These models are referred to as “PPO-ptx.” During RL training, the following combined objective function was maximized:
 
-$$objective(ϕ) = \mathbb{E}_{(x,y) \sim D_{\pi^{\text{RL}}_{ϕ}}}[r_θ(x, y)] - \beta \log \left( \frac{\pi^{\text{RL}}_{ϕ}(y|x)}{\pi^{\text{SFT}}(y|x)} \right) + \gamma \mathbb{E}_{x \sim D_{\text{pretrain}}} \left[ \log(\pi^{\text{RL}}_{ϕ}(x)) \right]$$
+$$objective(ϕ) = \mathbb{E}_{(x,y) \sim D_{\pi^{\text{RL}}_{ϕ}}}[r_θ(x, y)] - \beta \log \left( \frac{\pi^{\text{RL}}_{ϕ}(y|x)}{\pi^{\text{SFT}}(y|x)} \right) + \gamma \mathbb{E}_{x \sim D_{\text{pretrain}}} \left[ \log(\pi^{\text{RL}}_{ϕ}(x)) \right] 
+$$
 
-where \\( \pi^{RL}_{ϕ} \\) is the RL policy learned, \\( \pi^{\text{SFT}} \\) is the supervised training model, and \\( D_{pretrain} \\) is the pre-training distribution. The KL reward coefficient \\( \beta \\) and the pre-training loss coefficient \\( \gamma \\) respectively control the intensity of the KL penalty and the pre-trained gradients. For the “PPO” model, \\( \gamma \\) is set to 0.
+where \\(\pi^{RL}_{\phi}\\) 
+is the RL policy learned, \\( (\pi)^{\text{SFT}} \\) is the supervised training model, and \\( D_{pretrain} \\) is the pre-training distribution. The KL reward coefficient \\( \beta \\) and the pre-training loss coefficient \\( \gamma \\) respectively control the intensity of the KL penalty and the pre-trained gradients. For the “PPO” model, \\( \gamma \\) is set to 0.
+
+
 
 
 ## 5.2 Conclusion
