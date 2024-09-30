@@ -9,7 +9,7 @@ redirect_from:
 
 I am current a research engineer at A*STAR I2R Singapore. My research interests focus on Neuroscience-inspired AI, Adaptive Systems, Machine Learning and Computational Neuroscience. My long-term goal is to abstract concepts such as consciousness, memory, and learning from biological neural systems and model them into advanced artificial intelligence models for application in real life. In turn, I also aim to use latest-generation AI technologies to assist and accelerate the exploration of biological neural systems, especially the brain, to enable fundamental science to explain the mechanisms of complex behaviors and systems. 
 
-My current research focuses on the Predictive Coding Network, a promising area where AI models utilize hierarchical learning processes akin to human cognitive functions. There are many novel structures, such as Active Predictive Coding and Hybrid Predictive Coding. I am now keenly interested in exploring and expanding the application of PCN in various scenarios, aiming to achieve state-of-the-art performance through structural adjustments or the integration of new modules.
+My current research focuses on the Predictive Coding theory, a promising area where AI models utilize hierarchical learning processes akin to human cognitive functions. And its derivative structures, such as Active Predictive Coding and Relative cue encoding. I am now keenly interested in exploring and expanding the application of PCN in various scenarios, aiming to achieve state-of-the-art performance through structural adjustments or the integration of new modules.
 
 
 I am currently searching for appropriate PhD programs worldwide, aiming to fulfill part of my grand ambitions through them. I completed both my MSc and BSc in Artificial Intelligence at the University of Sussex, graduating with Distinction and First-class honors, respectively. Additionally, I undertook cross-disciplinary modules that provided me with unique insights into neuroscience, brain and behavior, artificial life, and autonomous vehicles, among others. These academic experiences have given me a solid foundation in AI and computational methods in computer science. I have also completed an internship at an AI startup company, hyperTunnel, which has endowed me with practical knowledge in multi-agent optimization, comprehensive analysis, solution architecture, and programming. These experiences demonstrate that I possess the academic and professional skills necessary to pursue a research position, and I look forward to fulfilling my aspiration for further academic development. Please contact me if you would like to discuss further with me anything about Artificial Intelligence, Neuroscience or robotics.
@@ -33,13 +33,13 @@ What I have Learned:
 MISCELLANEOUS
 ------
 
-| Programming Languages  | Hobbies          | Where I usually respawn     |
+| Programming Languages  | Hobbies          | My usual haunts             |
 | --------               | --------         | --------                    |
 | Python/Torch/Tensorflow| Baking           | Labs                        |
-| Matlab/Simulink        | Cocktail Making  | Bars                        |
-| Html/Css/Javascript    | Tennis           | Gardens                     |
-| C/C++/C#/.Net/Unity3D  | Swimming         | Seaside                     |
-| Git/Docker/Bash/Shell  | Cello            | Kitchen                     |
+| Matlab/Simulink        | Bartending       | Gardens                     |
+| Html/Css/Javascript    | Tennis           | Kitchen                     |
+| C/C++/C#/.Net/Unity3D  | Swimming         | rehearsal studio            |
+| Git/Docker/Bash/Shell  | Cello            | Seaside                     |
 | Java/SpringBoot        | Gaming           |                             |
 
 For more info
