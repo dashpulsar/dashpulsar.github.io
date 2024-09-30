@@ -38,9 +38,9 @@ MISCELLANEOUS
 | Python/Torch/Tensorflow| Baking           | Labs                        |
 | Matlab/Simulink        | Bartending       | Gardens                     |
 | Html/Css/Javascript    | Tennis           | Kitchen                     |
-| C/C++/C#/.Net/Unity3D  | Swimming         | rehearsal studio            |
-| Git/Docker/Bash/Shell  | Cello            | Seaside                     |
-| Java/SpringBoot        | Gaming           |                             |
+| C/C++/C#/.Net/Unity3D  | Swimming         | Rehearsal Studio            |
+| Git/Docker/Bash/Shell  | Cello            | Tennis Court                |
+| Java/SpringBoot        | Gaming           | Seaside                     |
 
 For more info
 ------
