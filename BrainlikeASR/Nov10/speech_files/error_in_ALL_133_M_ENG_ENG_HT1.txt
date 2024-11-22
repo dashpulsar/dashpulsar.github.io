@@ -1,0 +1,117 @@
+1.
+ALL_ENG_ENG_HT1\\ALL_133_M_ENG_ENG_HT1.wav
+BIG DOGS CAN BE DANGEROUS
+
+['d', 'ɑ', 'ɡ', 'z']
+['d', 'ɔ', 'ɡ', 'z']
+['d', 'ɔ', 'ɡ', 'z']
+1
+0
+
+
+
+2.
+ALL_ENG_ENG_HT1\\ALL_133_M_ENG_ENG_HT1.wav
+THE PLAYER LOST A SHOE
+
+['l', 'ɔ', 's', 't']
+['l', 'aʊ', 's', 't']
+['l', 'ɔ', 's', 't']
+0
+1
+
+
+3.
+ALL_ENG_ENG_HT1\\ALL_133_M_ENG_ENG_HT1.wav
+THE FIRE WAS VERY HOT
+
+['f', 'aɪ', 'ɹ']
+['f', 'aɪ']
+['f', 'aɪ', 'ɹ']
+
+
+4.
+ALL_ENG_ENG_HT1\\ALL_133_M_ENG_ENG_HT1.wav
+THE FIRE WAS VERY HOT
+
+['h','ɑ','t']
+['h','oʊ','t']
+['h','ɑ','t']
+
+
+5.
+ALL_ENG_ENG_HT1\\ALL_133_M_ENG_ENG_HT1.wav
+THE BANANAS ARE TOO RIPE
+
+['ɑ', 'ɹ']
+['ɚ']
+['ɚ']
+2
+0
+
+
+
+6.
+ALL_ENG_ENG_HT1\\ALL_133_M_ENG_ENG_HT1.wav
+HE GREW LOTS OF VEGETABLES
+
+
+
+
+
+7.
+ALL_ENG_ENG_HT1\\ALL_133_M_ENG_ENG_HT1.wav
+THE KITCHEN WINDOW WAS CLEAN
+
+['k', 'ɪ', 'tʃ', 'ə', 'n']
+['k', 'ɪ', 'tʃ', 'ɪ', 'n']
+['k', 'ɪ', 'tʃ', 'ɪ', 'n']
+1
+0
+
+
+
+8.
+ALL_ENG_ENG_HT1\\ALL_133_M_ENG_ENG_HT1.wav
+THE GIRL IS FIXING HER DRESS
+
+['ɡ', 'ɚ', 'l']
+['ɡ', 'ɚ']
+['ɡ', 'ɚ', 'l']
+0
+1
+
+9.
+ALL_ENG_ENG_HT1\\ALL_133_M_ENG_ENG_HT1.wav
+FATHER FORGOT THE BREAD
+
+['f', 'ɚ', 'ɡ', 'ɑ', 't']
+['f', 'ɚ', 'ɡ', 'ɔ', 't']
+['f', 'ɚ', 'ɡ', 'ɔ', 't']
+1
+0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

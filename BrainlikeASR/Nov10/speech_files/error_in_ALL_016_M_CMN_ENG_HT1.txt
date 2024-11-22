@@ -1,0 +1,204 @@
+1.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+2, BIG DOGS CAN BE DANGEROUS
+
+['d', 'ɑ', 'ɡ', 'z']  #human labelled
+['d', 'æ', 'z']       #w2v labelled
+['d', 'ɑ', 'z']        #Zhengyang Labelled
+1 mistake
+1 mistake
+
+2.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+7, SHE'S DRINKING FROM HER OWN CUP
+
+['d', 'ɹ', 'ɪ', 'ŋ', 'k', 'ə', 'n'] 
+['d', 'ɹ', 'ɪ', 'ŋ', 'k', 'ɪ', 'ŋ']
+['d', 'ɹ', 'ɪ', 'ŋ', 'k', 'ɪ', 'ŋ']
+2 mistake
+0 mistake
+
+3.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+9, THE CAR IS GOING TOO FAST
+
+['k', 'ɑ', 'ɹ']
+['k', 'aʊ', 'ɹ']
+['k', 'ɑ', 'ɹ']
+0 mistake
+1 mistake 
+
+4.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+12, THE BANANAS ARE TOO RIPE
+
+['b', 'ə', 'n', 'æ', 'n', 'ə', 'z']
+['p', 'ə', 'n', 'æ', 'n', 'oʊ', 'z']
+['b', 'ə', 'n', 'æ', 'n', 'ə', 'z']
+0 mistake
+2 mistake
+
+
+
+5.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+12, THE BANANAS ARE TOO RIPE
+
+['ɑ', 'ɹ']
+['ɚ']
+['ɑ', 'ɹ']
+0 mistake
+1 mistake 
+
+
+6.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+12, THE BANANAS ARE TOO RIPE
+
+['ɹ', 'aɪ', 'p']
+['ɹ', 'aɪ']
+['ɹ', 'aɪ', 'p']
+0 mistake
+1 mistake 
+
+
+7.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+13, HE GREW LOTS OF VEGETABLES
+
+['l', 'ɑ', 't', 's']
+['n', 'aʊ', 't']
+['l', 'ɑ', 't', 'z']
+1 mistake 
+3 mistake 
+
+8.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+13, HE GREW LOTS OF VEGETABLES
+
+['v', 'ɛ', 'dʒ', 't', 'ə', 'b', 'ə', 'l', 'z']
+['v', 'ɛ', 'dʒ', 't', 'ə', 'b', 'oʊ', 'z']
+['v', 'ɛ', 'dʒ', 't', 'ə', 'b', 'l', 's']
+2 mistake 
+2 mistake 
+
+9.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+17, THE MAILMAN BROUGHT A LETTER
+
+['m', 'eɪ', 'l', 'm', 'æ', 'n']
+['m', 'eɪ', 'm', 'æ', 'n']
+['m', 'eɪ', 'l', 'm', 'æ', 'n']
+0 mistake
+1 mistake 
+
+10.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+17, THE MAILMAN BROUGHT A LETTER
+
+['b', 'ɹ', 'ɔ', 't']
+['b', 'ɹ', 'aʊ', 't']
+['b', 'ɹ', 'ɔ', 't']
+0 mistake
+1 mistake 
+
+11.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+17, THE MAILMAN BROUGHT A LETTER
+
+['l', 'ɛ', 't', 'ɚ']
+['l', 'ɛ', 'ɹ', 'ɚ']
+['l', 'ɛ', 't', 'ɚ']
+0 mistake
+1 mistake 
+
+
+12.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+THE TABLE HAS THREE LEGS
+
+['t', 'eɪ', 'b', 'ə', 'l']
+['t', 'eɪ', 'b', 'oʊ']
+['t', 'eɪ', 'b', 'oʊ']
+2 mistake 
+0 mistake 
+
+
+13.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+THE DOG IS EATING SOME MEAT
+
+['i', 't', 'ɪ', 'ŋ']
+['ɪ', 'ɹ', 'ɪ', 'ŋ',]
+['i', 't', 'ɪ', 'ŋ']
+0
+2
+
+
+14.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+THE DOG IS EATING SOME MEAT
+
+['m', 'i', 't']
+['m', 'ɪ', 't']
+['m', 'ɪ', 't']
+1
+0
+
+15.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+FATHER FORGOT THE BREAD
+
+['f', 'ɑ', 'ð', 'ɚ']
+['f', 'æ', 'n', 'd', 'ɚ']
+['f', 'ɑ', 'ð', 'ɚ']
+0
+1
+
+
+16.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+FATHER FORGOT THE BREAD
+
+['f', 'ɚ', 'ɡ', 'ɑ', 't']
+['f', 'ɚ', 'ɡ', 'ɔ', 't']
+['f', 'ɚ', 'ɡ', 'ɔ']
+2
+1
+
+
+
+17.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+THE PAINTER USES A BRUSH
+
+['j', 'u', 's', 'ə', 'z']
+['j', 'u', 'z', 'ɪ', 'z']
+['j', 'u', 'z', 'ɪ', 'z']
+1
+0
+
+
+18.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+THEY HAD TWO EMPTY BOTTLES
+
+
+['ɛ', 'm', 't', 'i']
+['ɛ', 'm', 'p', 't', 'i']
+['ɛ', 'm', 't', 'i']
+
+
+
+19.
+\ALL_CMN_ENG_HT1\\ALL_016_M_CMN_ENG_HT1.wav
+THE HOUSE HAD NINE BEDROOMS
+
+['b', 'ɛ', 'd', 'ɹ', 'u', 'm', 'z']
+['b', 'ɛ', 'd', 'ɹ', 'ʊ', 'm', 'z']
+['b', 'ɛ', 'd', 'ɹ', 'u', 'm', 'z']
+0
+1
+
+
+
