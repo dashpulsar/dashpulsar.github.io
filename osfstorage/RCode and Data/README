@@ -1,0 +1,11 @@
+This respository contains open data and analysis code for a Belyk et al Pre-print spanning rtMRI vocal tract measurements, acoustic data, and perceptual height judgements.
+
+This repository contains only processed data. Original MRI and audio recordings are linked to https://osf.io/6pqkt/.
+
+rtMRI_* contains provides support functions for fPCA of the vocal tract following our semi-automatic tracing method. Code is included for data import as an example, but the data are provided post import so that all participant data could be anonymised.
+
+Likewise acousti_c* and perception_* includes some data import code to document our process, but load() functions in those script provide post-import data that has been anonymised.
+
+
+
+contact belykm@gmail.com for further information.

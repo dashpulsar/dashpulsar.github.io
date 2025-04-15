@@ -1,0 +1,3 @@
+This repository includes the data and code needed to run the Shiny companion app to Belyk et al Voices of Social Manipulation locally in event that the web implementation becomes unavailable.
+
+You maybe need to change the working directory in the R code and install packages, but it should otherwise work as is.

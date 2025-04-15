@@ -51,8 +51,13 @@ Skills
 
 Publications
 ======
-**Conference** (accepted) Jin, Z. (2023) ‘A dynamic Fitting Method for Hybrid Time-Delayed and 
+**Conference** Jin, Z. (2023) ‘A dynamic Fitting Method for Hybrid Time-Delayed and 
 Uncertain Internally-Coupled Complex Networks: From Kuramoto Model to Neural Mass Model’, 
 Complex Networks 2023.
+
+**Conference** Jin, Z., Zhu, Y. and Jaeger, T.F. (2025) ‘Latent speech representations learned
+through self-supervised learning predict listeners’ generalization of adaptation across talkers’,
+Cognitive Science 2025.
+
 
 
