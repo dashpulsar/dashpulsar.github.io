@@ -6,6 +6,9 @@ redirect_from:
   - /about/
   - /about.html
 ---
+**"𝓦𝓱𝓮𝓻𝓮 𝓽𝓱𝓮𝓻𝓮 𝓲𝓼 𝓪 𝔀𝓲𝓵𝓵, 𝓽𝓱𝓮𝓻𝓮 𝓲𝓼 𝓪 𝔀𝓪𝔂."** — *𝓣𝓸 𝓽𝓱𝓸𝓼𝓮 𝔀𝓱𝓸 𝓱𝓪𝓿𝓮 𝓭𝓻𝓮𝓪𝓶𝓼*
+
+
 
 I am a research intern at University of Rochester, collaborating with Prof. Florian Jaeger and Prof. Yuhao Zhu, focus on cross-talker accented speech generalisation. My research interests are centered around Neuro/CogScience-inspired AI, Adaptive Systems, Machine Learning and Computational Neuroscience. My long-term goal is to abstract concepts such as consciousness, memory, and learning from biological neural systems and model them into advanced artificial intelligence models for application in real life. In turn, I also aim to use latest-generation AI technologies to assist and accelerate the exploration of biological neural systems, especially the brain, to enable fundamental science to explain the mechanisms of complex behaviors and systems. 
 
