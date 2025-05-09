@@ -55,7 +55,7 @@ author:
   goodreads        : # Username
   google_plus      : # Username
   keybase          : # Username
-  instagram        : "neptunexdust"
+  instagram        : #"neptunexdust"
   lastfm           : # Username
   linkedin         : # Username
   mastodon         : # URL
@@ -72,7 +72,7 @@ author:
   xing             : # Username
   youtube          : # Username
   zhihu            : # URL
-  weixin           : "DashPulsar"
+  wechat           : "DashPulsar"
 
 
 # Site Settings
