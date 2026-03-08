@@ -283,7 +283,7 @@ InstructGPT has set three primary goals for an idealized language model:
 
 ## 5.1 Model Structures and Methods
 
-InstructGPT主要使用了三步方案：分别是Supervised Fine-Tuning(SFT),train reward model and Reinforcement Learning from Human Feedback(RLHF).
+InstructGPT primarily adopts a three-step approach: Supervised Fine-Tuning (SFT), training a reward model, and Reinforcement Learning from Human Feedback (RLHF).
 
 ![P012](https://dashpulsar.github.io/images/P012.png)
 
