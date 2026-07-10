@@ -126,6 +126,27 @@ main {
     padding: 4rem 0 6rem;
 }
 
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+    border-color: var(--text-secondary);
+}
+
 .hero-title {
     font-size: 3rem;
     margin-bottom: 0.5rem;
@@ -308,6 +329,17 @@ footer {
         gap: 1rem;
     }
     
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .hero-contact {
+        justify-content: center;
+        display: flex;
+    }
+
     .timeline-header {
         flex-direction: column;
     }
