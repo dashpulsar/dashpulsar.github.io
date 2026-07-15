@@ -1,15 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>app</title>
-    <script type="module" crossorigin src="/assets/index-DfJmULcA.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DvAVa9jT.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    <a href="/sudoku/" style="position:fixed;bottom:20px;right:20px;background:#b5b161;color:#0f0f11;padding:12px 24px;border-radius:24px;text-decoration:none;font-family:sans-serif;font-weight:bold;z-index:9999;box-shadow:0 4px 12px rgba(0,0,0,0.3); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Play Sudoku!</a>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhengyang Jin | Academic Portfolio</title>
+    <meta name="description" content="Academic portfolio of Zhengyang Jin, Ph.D. Student in Computer Science at Boston College.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="nav-logo">Zhengyang Jin</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#publications">Publications</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section fade-in">
+            <div class="hero-container">
+                <div class="hero-image">
+                    <img src="profile.jpg" alt="Zhengyang Jin">
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Zhengyang Jin</h1>
+                    <h2 class="hero-subtitle">Ph.D. Student in Computer Science</h2>
+                    <p class="hero-affiliation">Boston College, Expected Start: Aug 2026</p>
+                    <div class="hero-contact">
+                        <a href="mailto:Zhengyang_Jin@outlook.com" class="contact-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            Zhengyang_Jin@outlook.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section fade-in">
+            <h2 class="section-title">About Me</h2>
+            <div class="card">
+                <p>
+                    I am an incoming Ph.D. student in the Department of Computer Science at Boston College, advised by <strong>Prof. Momchil Tomov</strong>. 
+                </p>
+                <p>
+                    My research area of interest focuses on the <strong>computational modelling of human cognition and behaviour</strong>. 
+                    Specifically, I study how individuals learn and adapt to new software environments by utilizing statistical modeling and mathematical frameworks. 
+                    The primary goal of my work is to understand general human learning patterns to inform the design of user interfaces and improve the reliability of digital software experiences.
+                </p>
+                <p>
+                    My background bridges computer science, statistical data analysis, and human factors, aiming to build computational paradigms that minimize cognitive friction in human-computer interactions.
+                </p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section fade-in">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item card">
+                    <div class="timeline-header">
+                        <h3>Ph.D. in Computer Science</h3>
+                        <span class="timeline-date">Aug 2026 – Present</span>
+                    </div>
+                    <p class="timeline-institution">Boston College | Chestnut Hill, MA, USA</p>
+                    <ul class="timeline-details">
+                        <li>Advisor: Prof. Momchil Tomov</li>
+                        <li>Focus: Computational modelling of human cognition & behaviour.</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item card">
+                    <div class="timeline-header">
+                        <h3>MSc in Computer Science (Adaptive Systems)</h3>
+                        <span class="timeline-date">Sep 2021 – Oct 2022</span>
+                    </div>
+                    <p class="timeline-institution">University of Sussex | Brighton, UK</p>
+                    <ul class="timeline-details">
+                        <li>Graduated with Distinction</li>
+                        <li>Dissertation: Extending Computational Visual Models for Colour Image Processing</li>
+                        <li>Evaluated standard computational vision structures using basic spatial filters to enhance shape feature recognition over textures.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item card">
+                    <div class="timeline-header">
+                        <h3>BSc in Computer Science</h3>
+                        <span class="timeline-date">Sep 2019 – Jun 2021</span>
+                    </div>
+                    <p class="timeline-institution">University of Sussex | Brighton, UK</p>
+                    <ul class="timeline-details">
+                        <li>Graduated with First-Class Honours</li>
+                        <li>Dissertation: Parameter Tuning for Synchronization in Mathematical Networks</li>
+                        <li>Conducted mathematical fitting for network dynamics, simulating network structures incorporating time delays and coupling strengths.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section fade-in">
+            <h2 class="section-title">Academic & Research Experience</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item card">
+                    <div class="timeline-header">
+                        <h3>Academic Research Collaborator</h3>
+                        <span class="timeline-date">Sep 2025 – Jan 2026</span>
+                    </div>
+                    <p class="timeline-institution">Rogers Research Group, University of Northwestern | Remote</p>
+                    <ul class="timeline-details">
+                        <li>Supervised by Prof. John A. Rogers.</li>
+                        <li>Conducted time-series data analysis on standard physiological signals to build computational models for prediction tasks.</li>
+                        <li>Applied statistical distributions and foundational modeling techniques to understand and classify behavioral patterns in small-scale feature data.</li>
+                        <li>Performed algorithm evaluation and interpretability studies to ensure the reliability of the computational models.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item card">
+                    <div class="timeline-header">
+                        <h3>Independent Research Collaborator</h3>
+                        <span class="timeline-date">Jul 2024 – Present</span>
+                    </div>
+                    <p class="timeline-institution">HLP Lab, University of Rochester | Remote</p>
+                    <ul class="timeline-details">
+                        <li>Supervised by Prof. Florian Jeager & Prof. Yuhao Zhu.</li>
+                        <li>Engaged in independent research collaboration focusing on cross-talker generalization in computational speech perception.</li>
+                        <li>Utilized statistical modelling concepts to create data structures capable of capturing speech variations.</li>
+                        <li>Analysed large-scale interaction data using Generalized Linear Mixed Models (GLMMs) to map learning distances to behavioural outcomes.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item card">
+                    <div class="timeline-header">
+                        <h3>Research Engineer</h3>
+                        <span class="timeline-date">Aug 2023 – Mar 2024</span>
+                    </div>
+                    <p class="timeline-institution">A*STAR (Agency for Science, Technology and Research) | Singapore / Remote</p>
+                    <ul class="timeline-details">
+                        <li>Conducted literature reviews, developed mathematical and computational models, optimized algorithms, and performed data annotation for research projects.</li>
+                        <li>Constructed standard virtual 3D scenes to serve as simulation training sets for evaluating algorithms.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item card">
+                    <div class="timeline-header">
+                        <h3>Algorithm Engineer Intern</h3>
+                        <span class="timeline-date">Jan 2023 – Jul 2023</span>
+                    </div>
+                    <p class="timeline-institution">hyperTunnel | London / Remote</p>
+                    <ul class="timeline-details">
+                        <li>Conducted literature reviews and implemented cutting-edge algorithms from academic papers.</li>
+                        <li>Developed computational models for autonomous systems and performed simulations to evaluate and optimize system performance.</li>
+                        <li>Designed a task scheduling and motion control framework in a simulated environment, optimizing operational efficiency.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item card">
+                    <div class="timeline-header">
+                        <h3>Mentee of EMBRACE Mentoring Program</h3>
+                        <span class="timeline-date">Oct 2021 – Jun 2022</span>
+                    </div>
+                    <p class="timeline-institution">Microsoft | London / Remote</p>
+                    <ul class="timeline-details">
+                        <li>Studied fairness-aware algorithms to understand how to mitigate statistical bias in software systems and ensure equitable user exposure.</li>
+                        <li>Explored statistical modeling and data-driven concepts to model dynamic user preferences, assisting in the optimization of user interface layouts.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="section fade-in">
+            <h2 class="section-title">Publications</h2>
+            <div class="publication-list">
+                
+                <div class="publication-item card">
+                    <div class="pub-year">2025</div>
+                    <div class="pub-details">
+                        <h3 class="pub-title">Latent speech representations learned through self-supervised learning predict listeners' generalization of adaptation across talkers</h3>
+                        <p class="pub-authors"><strong>Jin, Z.</strong>, Zhu, Y. and Jaeger, T.F.</p>
+                        <p class="pub-venue"><em>Cognitive Science</em>, 2025.</p>
+                    </div>
+                </div>
+
+                <div class="publication-item card">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-details">
+                        <h3 class="pub-title">A dynamic fitting method for hybrid time-delayed and uncertain internally-coupled networks: from Kuramoto model to Macroscopic Mass Model</h3>
+                        <p class="pub-authors"><strong>Jin, Z.</strong></p>
+                        <p class="pub-venue"><em>Networks & Their Applications XII</em>. Cham: Springer Nature Switzerland, pp. 27–38, 2024.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Zhengyang Jin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
 </html>
